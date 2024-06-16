@@ -3,7 +3,7 @@ import HeroSection from "@/components/HeroSection";
 
 export default function Home() {
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-between">
+    <main className="relative flex min-h-screen flex-col items-center">
       {/* Gradient */}
       <div
         aria-hidden="true"
