@@ -2,31 +2,17 @@
 import ContactMe from './ContactMe';
 import { Button } from '@nextui-org/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { useEffect } from 'react';
-import useInView from '@/hooks/useInView';
 
 export default function HeroSection() {
-  const [ref, isInView] = useInView<HTMLDivElement>({ threshold: 0.1 });
-
-  useEffect(() => {
-    if (isInView) {
-      console.log('Element is in view');
-    } else {
-      console.log('Element is out of view');
-    }
-  }, [isInView]);
-
   return (
     <div className="pt-28 w-full" id="home">
-      <div className="container flex flex-row justify-center gap-10  py-10 lg:py-16">
-        <Avatar className="w-60 h-64">
+      <div className="container flex flex-col justify-center gap-10  py-10 lg:py-16 sm:flex-row">
+        <Avatar className="w-60 mx-auto sm:mx-0 h-64">
           <AvatarImage src="/images/other-dark-portrait.jpeg" alt="profile" />
           <AvatarFallback>PA</AvatarFallback>
         </Avatar>
         <div className=" text-center">
-          <p ref={ref} className="text-2xl">
-            Hey, I&apos;m
-          </p>
+          <p className="text-2xl">Hey, I&apos;m</p>
           <div className="mt-2 max-w-2xl">
             <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
               Paul Ashioya

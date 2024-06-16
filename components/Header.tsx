@@ -7,12 +7,6 @@ import Link from 'next/link';
 
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
 import { Menu, Moon, Sun } from 'lucide-react';
 import {
   DropdownMenu,
@@ -28,7 +22,7 @@ type HeaderProps = {
 };
 
 export default function Header({ activeNav }: HeaderProps) {
-  const isDesktop = useMediaQuery('(min-width: 768px)');
+  const isDesktop = useMediaQuery('(min-width: 642px)');
   const { theme, setTheme } = useTheme();
 
   function scrollToHome() {
@@ -111,16 +105,7 @@ export default function Header({ activeNav }: HeaderProps) {
             <SheetTrigger>
               <Menu />
             </SheetTrigger>
-            <SheetContent>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="item-1">
-                  <AccordionTrigger className="text-center w-full">Style</AccordionTrigger>
-                  <AccordionContent>
-                    Yes. It adheres to the WAI-ARIA design pattern.
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </SheetContent>
+            <SheetContent></SheetContent>
           </Sheet>
         )}
       </NavbarContent>
