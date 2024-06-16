@@ -76,14 +76,12 @@
 }
 
 @font-face {
-  font-family: "Figtree-Regular";
-  src:
-    url("/fonts/Figtree-Regular.ttf") format("ttf"),
-    url("/fonts/Figtree-Regular.ttf") format("ttf");
+  font-family: 'figtree';
+  src: url('~/public/font/Figtree-Regular.ttf');
   font-weight: normal;
   font-style: normal;
 }
 
 body {
-  font-family: "Figtree-regular", sans-serif;
+  font-family: 'figtree', sans-serif;
 }
