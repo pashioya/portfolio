@@ -2,18 +2,17 @@
 
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { NavigationMenuComponent } from './NavigationMenuComponent';
+
+import { Menu } from 'lucide-react';
+
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { Circle, Menu, Moon, Sun } from 'lucide-react';
-import { Drawer, DrawerContent, DrawerTrigger } from './ui/drawer';
-import { Separator } from '@radix-ui/react-dropdown-menu';
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 
 export default function MainMenu() {
   const isDesktop = useMediaQuery('(min-width: 768px)');
@@ -21,39 +20,20 @@ export default function MainMenu() {
   return isDesktop ? (
     <div className="flex flex-row ">
       <NavigationMenuComponent />
-      <DropdownMenu>
-        <DropdownMenuTrigger>
-          <Moon />
-        </DropdownMenuTrigger>
-        <DropdownMenuContent>
-          <DropdownMenuGroup>
-            <DropdownMenuItem className="items-center justify-center">
-              <Moon />
-            </DropdownMenuItem>
-            <DropdownMenuItem className="items-center justify-center">
-              <Sun />
-            </DropdownMenuItem>
-          </DropdownMenuGroup>
-          <DropdownMenuSeparator />
-          <DropdownMenuLabel className="text-sm text-muted text-center">Accent</DropdownMenuLabel>
-          <DropdownMenuItem className="items-center justify-center">
-            <Circle color="slate" fill="slate" />
-          </DropdownMenuItem>
-          <DropdownMenuItem className="items-center justify-center">
-            <Circle color="red" fill="red" />
-          </DropdownMenuItem>
-          <DropdownMenuItem className="items-center justify-center">
-            <Circle color="blue" fill="blue" />
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
     </div>
   ) : (
-    <Drawer direction="right">
-      <DrawerTrigger>
+    <Sheet>
+      <SheetTrigger>
         <Menu />
-      </DrawerTrigger>
-      <DrawerContent>some drawer content</DrawerContent>
-    </Drawer>
+      </SheetTrigger>
+      <SheetContent>
+        <Accordion type="single" collapsible>
+          <AccordionItem value="item-1">
+            <AccordionTrigger className="text-center w-full">Style</AccordionTrigger>
+            <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </SheetContent>
+    </Sheet>
   );
 }
