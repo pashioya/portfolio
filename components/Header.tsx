@@ -32,7 +32,7 @@ export default function Header({ activeNav }: HeaderProps) {
   const { theme, setTheme } = useTheme();
 
   function scrollToHome() {
-    let e = document.getElementById('home');
+    const e = document.getElementById('home');
     e?.scrollIntoView({
       block: 'start',
       behavior: 'smooth',
@@ -41,7 +41,7 @@ export default function Header({ activeNav }: HeaderProps) {
   }
 
   function scrollToAboutMe() {
-    let e = document.getElementById('about-me');
+    const e = document.getElementById('about-me');
     e?.scrollIntoView({
       block: 'start',
       behavior: 'smooth',

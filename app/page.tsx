@@ -8,7 +8,6 @@ import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import { ScrollShadow } from '@nextui-org/scroll-shadow';
 import { useEffect, useState } from 'react';
 import useInView from '@/hooks/useInView';
-import { set } from 'react-hook-form';
 
 export default function Home() {
   const [activeNav, setActiveNav] = useState('home');

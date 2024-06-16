@@ -1,6 +1,5 @@
 import { Card, CardHeader } from '@nextui-org/card';
-import { Image } from '@nextui-org/image';
-import { CheckCircle2Icon, RibbonIcon, Users } from 'lucide-react';
+import { CheckCircle2Icon } from 'lucide-react';
 
 export default function Experience() {
   return (
