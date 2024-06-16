@@ -5,8 +5,8 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 export default function HeroSection() {
   return (
     <div className="flex flex-row items-center pt-28">
-      <Avatar className="w-56 h-56">
-        <AvatarImage src="/images/profile.png" alt="@shadcn" />
+      <Avatar className="w-60 h-64">
+        <AvatarImage src="/images/other-dark-portrait.jpeg" alt="profile" />
         <AvatarFallback>PA</AvatarFallback>
       </Avatar>
       <div className="container py-10 lg:py-16">
