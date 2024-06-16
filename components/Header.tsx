@@ -23,9 +23,31 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { useTheme } from 'next-themes';
 
-export default function Header() {
+type HeaderProps = {
+  activeNav: string;
+};
+
+export default function Header({ activeNav }: HeaderProps) {
   const isDesktop = useMediaQuery('(min-width: 768px)');
   const { theme, setTheme } = useTheme();
+
+  function scrollToHome() {
+    let e = document.getElementById('home');
+    e?.scrollIntoView({
+      block: 'start',
+      behavior: 'smooth',
+      inline: 'center',
+    });
+  }
+
+  function scrollToAboutMe() {
+    let e = document.getElementById('about-me');
+    e?.scrollIntoView({
+      block: 'start',
+      behavior: 'smooth',
+      inline: 'center',
+    });
+  }
 
   return (
     <Navbar
@@ -51,13 +73,13 @@ export default function Header() {
         <p className="font-bold text-inherit">Paul Ashioya</p>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem isActive>
-          <Link color="foreground" href="#">
+        <NavbarItem isActive={activeNav === 'home'}>
+          <Link color="foreground" href="#" onClick={() => scrollToHome()}>
             Home
           </Link>
         </NavbarItem>
-        <NavbarItem>
-          <Link href="#" aria-current="page">
+        <NavbarItem isActive={activeNav === 'about-me'}>
+          <Link href="#" aria-current="page" onClick={() => scrollToAboutMe()}>
             About
           </Link>
         </NavbarItem>
