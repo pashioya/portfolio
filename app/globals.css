@@ -77,7 +77,8 @@
 
 @font-face {
   font-family: "Figtree-Regular";
-  src: url("/fonts/Figtree-Regular.ttf") format("ttf"),
+  src:
+    url("/fonts/Figtree-Regular.ttf") format("ttf"),
     url("/fonts/Figtree-Regular.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;

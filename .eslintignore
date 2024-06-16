@@ -1,0 +1,6 @@
+.expo/
+*.config.js
+.eslintrc.*
+node_modules/
+# rnr folders
+components/ui/**
