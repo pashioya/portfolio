@@ -15,6 +15,8 @@ import {
 } from '@/components/ui/navigation-menu';
 import { BookOpen, Circle, Moon, Sun } from 'lucide-react';
 
+import { useTheme } from 'next-themes';
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -26,8 +28,10 @@ import {
 } from '@/components/ui/dropdown-menu';
 
 export function NavigationMenuComponent() {
+  const { theme, setTheme } = useTheme();
+
   return (
-    <>
+    <div className="gap-1 flex flex-row">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -72,16 +76,16 @@ export function NavigationMenuComponent() {
         </NavigationMenuList>
       </NavigationMenu>
       <DropdownMenu>
-        <DropdownMenuTrigger>
-          <Moon />
+        <DropdownMenuTrigger className="p-1">
+          {theme === 'dark' ? <Moon /> : <Sun />}
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuGroup>
             <DropdownMenuItem className="items-center justify-center">
-              <Moon />
+              <Moon onMouseUp={() => setTheme('dark')} />
             </DropdownMenuItem>
             <DropdownMenuItem className="items-center justify-center">
-              <Sun />
+              <Sun onMouseUp={() => setTheme('light')} />
             </DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
@@ -97,7 +101,7 @@ export function NavigationMenuComponent() {
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-    </>
+    </div>
   );
 }
 

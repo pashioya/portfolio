@@ -1,12 +1,16 @@
 import { ContactForm } from './ContactForm';
 import DialogComponent from './DialogComponent';
-import { Button } from './ui/button';
+import { Button } from '@nextui-org/button';
 
 export default function ContactMe() {
   return (
     <DialogComponent
       title={'Contact Me'}
-      trigger={<Button size={'lg'}>Contact Me</Button>}
+      trigger={
+        <Button variant="solid" color="primary" size={'lg'}>
+          Contact Me
+        </Button>
+      }
       content={<ContactForm />}
     />
   );

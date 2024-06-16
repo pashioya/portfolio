@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { Textarea } from '@/components/ui/textarea';
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@nextui-org/button';
 import {
   Form,
   FormControl,
@@ -102,7 +102,9 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button variant="solid" color="primary" type="submit">
+          Submit
+        </Button>
       </form>
     </Form>
   );

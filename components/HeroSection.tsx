@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import ContactMe from "./ContactMe";
+import ContactMe from './ContactMe';
+import { Button } from '@nextui-org/button';
 
 export default function HeroSection() {
   return (
@@ -14,13 +14,12 @@ export default function HeroSection() {
           </div>
           <div className="mt-5 max-w-3xl">
             <p className="text-xl text-muted-foreground">
-              Contact me if you have any project in mind or if you want to work
-              together.
+              Contact me if you have any project in mind or if you want to work together.
             </p>
           </div>
           <div className="mt-8 gap-3 flex justify-center">
             <ContactMe />
-            <Button size={"lg"} variant={"outline"}>
+            <Button size={'lg'} variant={'faded'}>
               Learn more
             </Button>
           </div>
