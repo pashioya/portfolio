@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss';
 const { fontFamily } = require('tailwindcss/defaultTheme');
-const { nextui } = require('@nextui-org/react');
+const { nextui } = require('@nextui-org/theme');
 
 const config = {
   darkMode: ['class'],
