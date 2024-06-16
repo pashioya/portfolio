@@ -1,5 +1,12 @@
 import Image from "next/image";
-import Link from "next/link";
+import { NavigationMenuComponent } from "./NavigationMenuComponent";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Moon, Sun } from "lucide-react";
 
 export default function Header() {
   return (
@@ -9,17 +16,19 @@ export default function Header() {
         <div className="flex items-center">
           <Image src="/images/profile.png" alt="logo" width={40} height={40} />
         </div>
-        <ul className="flex space-x-4">
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/about">About</Link>
-          </li>
-          <li>
-            <Link href="/projects">Projects</Link>
-          </li>
-        </ul>
+        <div className="flex flex-row">
+          <NavigationMenuComponent />
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <Moon />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuLabel>
+                <Sun />
+              </DropdownMenuLabel>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
       </nav>
     </header>
   );

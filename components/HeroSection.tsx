@@ -9,7 +9,7 @@ export default function HeroSection() {
           <p className="text-2xl">Hey there,</p>
           <div className="mt-5 max-w-2xl">
             <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-              Im a FullStack Developer
+              Im a Full-Stack Developer
             </h1>
           </div>
           <div className="mt-5 max-w-3xl">
