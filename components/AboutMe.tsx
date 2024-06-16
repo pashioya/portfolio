@@ -4,8 +4,8 @@ import { RibbonIcon, Users } from 'lucide-react';
 
 export default function AboutMe() {
   return (
-    <div className="flex flex-row items-center pt-28">
-      <div className="container py-10 lg:py-16">
+    <div className="pt-28 w-full" id="about-me">
+      <div className="container flex flex-row justify-center gap-10  py-10 lg:py-16">
         <div className="max-w-2xl text-center mx-auto">
           <p className="text-xl text-muted-foreground">Learn More</p>
           <div className="mt-1 max-w-2xl">
@@ -14,9 +14,9 @@ export default function AboutMe() {
             </h1>
           </div>
           <div className="mt-24 gap-3 flex justify-center">
-            <Card className="col-span-12 sm:col-span-4 h-[300px]">
+            <Card isPressable className="col-span-12 w-[50%] sm:col-span-4 h-[300px]">
               <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-                <h4 className="text-white font-medium text-xl">Experience</h4>
+                <h4 className="text-white font-medium text-2xl mb-1">Experience</h4>
                 <p className="text-tiny text-muted-foreground uppercase">
                   2+ Year Software Development
                 </p>
@@ -30,9 +30,9 @@ export default function AboutMe() {
                 src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               />
             </Card>
-            <Card className="col-span-12 sm:col-span-4 h-[300px]">
-              <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-                <h4 className="text-white font-medium text-xl">Education</h4>
+            <Card isPressable className="col-span-12 w-[50%] sm:col-span-4 h-[300px]">
+              <CardHeader className="absolute  z-10 top-1 flex-col  !items-start">
+                <h4 className="text-white font-medium text-2xl mb-1">Education</h4>
                 <p className="text-tiny text-muted-foreground uppercase">IB Graduate</p>
                 <p className="text-tiny text-muted-foreground uppercase">Computer Science Degree</p>
                 <RibbonIcon size={24} color="white" />
