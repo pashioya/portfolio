@@ -2,17 +2,8 @@
 import Image from 'next/image';
 
 import { useMediaQuery } from '@/hooks/useMediaQuery';
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  NavbarMenuToggle,
-  NavbarMenu,
-  NavbarMenuItem,
-} from '@nextui-org/navbar';
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from '@nextui-org/navbar';
 import Link from 'next/link';
-import { Button } from '@nextui-org/button';
 
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
