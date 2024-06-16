@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
@@ -7,15 +7,15 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import React from "react";
+} from '@/components/ui/dialog';
+import React from 'react';
 
 type DialogComponentProps = {
   title: string;
-  description: string;
+  description?: string;
   trigger: React.ReactNode;
   content: React.ReactNode;
-  footer: React.ReactNode;
+  footer?: React.ReactNode;
 };
 
 export default function DialogComponent({
