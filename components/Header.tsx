@@ -13,14 +13,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { Circle, Menu, Moon, Sun } from 'lucide-react';
+import { Menu, Moon, Sun } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useTheme } from 'next-themes';
@@ -78,31 +76,12 @@ export default function Header() {
             <DropdownMenuContent>
               <DropdownMenuGroup>
                 <DropdownMenuItem
-                  onMouseUp={() => setTheme('dark')}
+                  onMouseUp={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                   className="items-center justify-center"
                 >
-                  <Moon />
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onMouseUp={() => setTheme('light')}
-                  className="items-center justify-center"
-                >
-                  <Sun />
+                  {theme === 'dark' ? <Sun /> : <Moon />}
                 </DropdownMenuItem>
               </DropdownMenuGroup>
-              <DropdownMenuSeparator />
-              <DropdownMenuLabel className="text-sm text-muted-foreground text-center">
-                Accent
-              </DropdownMenuLabel>
-              <DropdownMenuItem className="items-center justify-center">
-                <Circle color="slate" fill="slate" />
-              </DropdownMenuItem>
-              <DropdownMenuItem className="items-center justify-center">
-                <Circle color="red" fill="red" />
-              </DropdownMenuItem>
-              <DropdownMenuItem className="items-center justify-center">
-                <Circle color="blue" fill="blue" />
-              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         ) : (
