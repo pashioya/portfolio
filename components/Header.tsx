@@ -7,12 +7,6 @@ import Link from 'next/link';
 
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
 import { Menu, Moon, Sun } from 'lucide-react';
 import {
   DropdownMenu,
