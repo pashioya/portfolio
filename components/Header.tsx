@@ -77,15 +77,21 @@ export default function Header() {
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuGroup>
-                <DropdownMenuItem className="items-center justify-center">
-                  <Moon onMouseUp={() => setTheme('dark')} />
+                <DropdownMenuItem
+                  onMouseUp={() => setTheme('dark')}
+                  className="items-center justify-center"
+                >
+                  <Moon />
                 </DropdownMenuItem>
-                <DropdownMenuItem className="items-center justify-center">
-                  <Sun onMouseUp={() => setTheme('light')} />
+                <DropdownMenuItem
+                  onMouseUp={() => setTheme('light')}
+                  className="items-center justify-center"
+                >
+                  <Sun />
                 </DropdownMenuItem>
               </DropdownMenuGroup>
               <DropdownMenuSeparator />
-              <DropdownMenuLabel className="text-sm text-muted text-center">
+              <DropdownMenuLabel className="text-sm text-muted-foreground text-center">
                 Accent
               </DropdownMenuLabel>
               <DropdownMenuItem className="items-center justify-center">
