@@ -1,7 +1,4 @@
-import ContactMe from './ContactMe';
-import { Button } from '@nextui-org/button';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Card, CardHeader, CardBody, CardFooter } from '@nextui-org/card';
+import { Card, CardHeader } from '@nextui-org/card';
 import { Image } from '@nextui-org/image';
 import { RibbonIcon, Users } from 'lucide-react';
 
