@@ -54,8 +54,13 @@ export default function Home() {
   return (
     <NextUIProvider>
       <NextThemesProvider attribute="class" defaultTheme="dark">
-        <main className="relative flex min-h-screen justify-center flex-col items-center overflow-x-hidden">
-          <ScrollShadow size={100} visibility="bottom" hideScrollBar className="w-screen h-screen">
+        <main className=" relative flex min-h-screen justify-center flex-col items-center overflow-x-hidden">
+          <ScrollShadow
+            size={100}
+            visibility="bottom"
+            hideScrollBar
+            className="w-[90%] h-screen overflow-x-hidden"
+          >
             <Header activeNav={activeNav} />
             <div ref={homeRef} id="home-separator" className="my-96" />
             <HeroSection />

@@ -13,7 +13,7 @@ export default function AboutMe() {
               About Me
             </h1>
           </div>
-          <div className="mt-24 gap-3 flex flex-col sm:flex-row justify-center">
+          <div className="mt-24 gap-3 flex flex-col sm:flex-row justify-center items-center">
             <Card isPressable className="col-span-12 w-[90%] sm:w-[50%] sm:col-span-4 h-[300px]">
               <CardHeader className="absolute z-10 top-1 flex-col !items-start">
                 <h4 className="text-white font-medium text-2xl mb-1">Experience</h4>
