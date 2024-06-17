@@ -24,7 +24,7 @@ export function Footer() {
             </div>
           }
         />
-        ,
+        , {` `}
         <PopOverComponent
           trigger={<Code color="primary">NextUI</Code>}
           content={
@@ -41,7 +41,7 @@ export function Footer() {
             </div>
           }
         />
-        ,
+        , {` `}
         <PopOverComponent
           trigger={<Code color="primary">Shadcn/ui</Code>}
           content={
