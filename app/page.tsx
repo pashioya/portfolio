@@ -11,6 +11,7 @@ import useInView from '@/hooks/useInView';
 
 import { Footer } from '@/components/Footer';
 import Education from '@/components/Education';
+import JobHistory from '@/components/JobHistory';
 
 export default function Home() {
   const [activeNav, setActiveNav] = useState('home');
@@ -18,6 +19,7 @@ export default function Home() {
   const [aboutMeRef, aboutMeRefisInView] = useInView<HTMLDivElement>({ threshold: 0.1 });
   const [experienceRef, experienceRefisInView] = useInView<HTMLDivElement>({ threshold: 0.1 });
   const [educationRef, educationRefisInView] = useInView<HTMLDivElement>({ threshold: 0.1 });
+  const [jobHistoryRef, jobHistoryRefisInView] = useInView<HTMLDivElement>({ threshold: 0.1 });
 
   useEffect(() => {
     if (homeRefisInView) {
@@ -43,10 +45,16 @@ export default function Home() {
     }
   }, [educationRefisInView]);
 
+  useEffect(() => {
+    if (jobHistoryRefisInView) {
+      setActiveNav('about-me');
+    }
+  }, [jobHistoryRefisInView]);
+
   return (
     <NextUIProvider>
       <NextThemesProvider attribute="class" defaultTheme="dark">
-        <main className="relative flex min-h-screen justify-center flex-col items-center">
+        <main className="relative flex min-h-screen justify-center flex-col items-center overflow-x-hidden">
           <ScrollShadow size={100} visibility="bottom" hideScrollBar className="w-screen h-screen">
             <Header activeNav={activeNav} />
             <div ref={homeRef} id="home-separator" className="my-96" />
@@ -58,6 +66,8 @@ export default function Home() {
             <Experience />
             <div ref={educationRef} id="education-separator" className="my-96" />
             <Education />
+            <div ref={jobHistoryRef} id="job-history-separator" className="my-96" />
+            <JobHistory />
           </ScrollShadow>
         </main>
         <Footer />

@@ -18,7 +18,7 @@ export default function AboutMe() {
               <CardHeader className="absolute z-10 top-1 flex-col !items-start">
                 <h4 className="text-white font-medium text-2xl mb-1">Experience</h4>
                 <p className="text-tiny text-muted-foreground uppercase">
-                  2+ Year Software Development
+                  2+ Years of Software Development
                 </p>
                 <Users size={24} color="white" />
               </CardHeader>
