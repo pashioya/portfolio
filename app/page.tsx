@@ -9,11 +9,15 @@ import { ScrollShadow } from '@nextui-org/scroll-shadow';
 import { useEffect, useState } from 'react';
 import useInView from '@/hooks/useInView';
 
+import { Footer } from '@/components/Footer';
+import Education from '@/components/Education';
+
 export default function Home() {
   const [activeNav, setActiveNav] = useState('home');
   const [homeRef, homeRefisInView] = useInView<HTMLDivElement>({ threshold: 0.6 });
   const [aboutMeRef, aboutMeRefisInView] = useInView<HTMLDivElement>({ threshold: 0.1 });
   const [experienceRef, experienceRefisInView] = useInView<HTMLDivElement>({ threshold: 0.1 });
+  const [educationRef, educationRefisInView] = useInView<HTMLDivElement>({ threshold: 0.1 });
 
   useEffect(() => {
     if (homeRefisInView) {
@@ -29,9 +33,15 @@ export default function Home() {
 
   useEffect(() => {
     if (experienceRefisInView) {
-      setActiveNav('experience');
+      setActiveNav('about-me');
     }
   }, [experienceRefisInView]);
+
+  useEffect(() => {
+    if (educationRefisInView) {
+      setActiveNav('about-me');
+    }
+  }, [educationRefisInView]);
 
   return (
     <NextUIProvider>
@@ -39,14 +49,18 @@ export default function Home() {
         <main className="relative flex min-h-screen justify-center flex-col items-center">
           <ScrollShadow size={100} visibility="bottom" hideScrollBar className="w-screen h-screen">
             <Header activeNav={activeNav} />
-            <div ref={homeRef} id="home-separator" />
+            <div ref={homeRef} id="home-separator" className="my-96" />
             <HeroSection />
             <div ref={aboutMeRef} id="about-me-separator" className="my-96" />
             <AboutMe />
+
             <div ref={experienceRef} id="experience-separator" className="my-96" />
             <Experience />
+            <div ref={educationRef} id="education-separator" className="my-96" />
+            <Education />
           </ScrollShadow>
         </main>
+        <Footer />
       </NextThemesProvider>
     </NextUIProvider>
   );
