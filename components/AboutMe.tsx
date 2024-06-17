@@ -13,8 +13,8 @@ export default function AboutMe() {
               About Me
             </h1>
           </div>
-          <div className="mt-24 gap-3 flex justify-center">
-            <Card isPressable className="col-span-12 w-[50%] sm:col-span-4 h-[300px]">
+          <div className="mt-24 gap-3 flex flex-col sm:flex-row justify-center">
+            <Card isPressable className="col-span-12 w-[90%] sm:w-[50%] sm:col-span-4 h-[300px]">
               <CardHeader className="absolute z-10 top-1 flex-col !items-start">
                 <h4 className="text-white font-medium text-2xl mb-1">Experience</h4>
                 <p className="text-tiny text-muted-foreground uppercase">
@@ -30,7 +30,7 @@ export default function AboutMe() {
                 src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               />
             </Card>
-            <Card isPressable className="col-span-12 w-[50%] sm:col-span-4 h-[300px]">
+            <Card isPressable className="col-span-12 w-[90%] sm:w-[50%] sm:col-span-4 h-[300px]">
               <CardHeader className="absolute  z-10 top-1 flex-col  !items-start">
                 <h4 className="text-white font-medium text-2xl mb-1">Education</h4>
                 <p className="text-tiny text-muted-foreground uppercase">IB Graduate</p>

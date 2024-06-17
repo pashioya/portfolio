@@ -12,8 +12,8 @@ export default function Experience() {
               Experience
             </h1>
           </div>
-          <div className="mt-24 gap-3 flex justify-center">
-            <Card className="col-span-12 sm:col-span-4 h-[300px] w-[50%] justify-around items-center align-middle">
+          <div className="mt-24 gap-3 flex justify-center flex-col sm:flex-row items-center">
+            <Card className="col-span-12 sm:col-span-4 h-[300px] w-[90%] sm:w-[50%] justify-around items-center align-middle">
               <CardHeader className="absolute z-10 top-1 flex-col !items-center">
                 <h4 className="font-medium text-xl mb-1">Frontend Development</h4>
               </CardHeader>
@@ -38,7 +38,7 @@ export default function Experience() {
                 </div>
               </div>
             </Card>
-            <Card className="col-span-12 sm:col-span-4 h-[300px] w-[50%] justify-around items-center align-middle">
+            <Card className="col-span-12 sm:col-span-4 h-[300px] w-[90%] sm:w-[50%] justify-around items-center align-middle">
               <CardHeader className="absolute z-10 top-1 flex-col !items-center">
                 <h4 className=" font-medium textxl mb-1 ">Backend Development</h4>
               </CardHeader>
