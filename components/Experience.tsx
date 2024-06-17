@@ -17,13 +17,12 @@ export default function Experience() {
   return (
     <div className="pt-28 w-full" id="Experience">
       <div className="container flex flex-row justify-center gap-10  py-10 lg:py-16">
-        <div className="w-[90%] text-center mx-auto">
+        <div className="w-[90%] text-center items-center justify-center mx-auto">
           <p className="text-xl text-muted-foreground">Discover My</p>
-          <div className="mt-1 max-w-2xl">
-            <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-              Experience
-            </h1>
-          </div>
+          <h1 className="scroll-m-20 text-center text-4xl font-extrabold tracking-tight lg:text-5xl">
+            Experience
+          </h1>
+
           <div className="mt-24 gap-3 flex justify-center flex-col items-center ">
             <Code color="primary" className="text-2xl rotate-12 mt-4 mb-2 self-end">
               Frontend

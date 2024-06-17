@@ -12,8 +12,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html suppressHydrationWarning={true} lang="en">
+      <body suppressHydrationWarning={true}>{children}</body>
     </html>
   );
 }

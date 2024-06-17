@@ -12,6 +12,7 @@ import useInView from '@/hooks/useInView';
 import { Footer } from '@/components/Footer';
 import Education from '@/components/Education';
 import JobHistory from '@/components/JobHistory';
+import BackToTop from '@/components/BackToTop';
 
 export default function Home() {
   const [activeNav, setActiveNav] = useState('home');
@@ -54,19 +55,14 @@ export default function Home() {
   return (
     <NextUIProvider>
       <NextThemesProvider attribute="class" defaultTheme="dark">
-        <main className=" relative flex min-h-screen justify-center flex-col items-center overflow-x-hidden">
-          <ScrollShadow
-            size={100}
-            visibility="bottom"
-            hideScrollBar
-            className="w-[90%] h-screen overflow-x-hidden"
-          >
+        <main className=" flex justify-center flex-col items-center overflow-x-hidden">
+          <ScrollShadow hideScrollBar className="w-[90%] ">
+            <div ref={homeRef} id="home-separator" />
+            <BackToTop />
             <Header activeNav={activeNav} />
-            <div ref={homeRef} id="home-separator" className="my-96" />
             <HeroSection />
             <div ref={aboutMeRef} id="about-me-separator" className="my-96" />
             <AboutMe />
-
             <div ref={experienceRef} id="experience-separator" className="my-96" />
             <Experience />
             <div ref={educationRef} id="education-separator" className="my-96" />
