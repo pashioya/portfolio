@@ -51,7 +51,7 @@ export default function Experience() {
             <div />
 
             <Code color="primary" className="text-2xl rotate-12 mt-4 mb-2 self-end">
-              Database
+              Devops
             </Code>
 
             <ParallaxText baseVelocity={-2}>

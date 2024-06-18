@@ -107,9 +107,26 @@ export default function Header({ activeNav }: HeaderProps) {
         ) : (
           <Sheet>
             <SheetTrigger>
-              <Menu />
+              <Menu className="text-primary" />
             </SheetTrigger>
-            <SheetContent></SheetContent>
+            <SheetContent draggable>
+              <div>
+                <nav className="menu">
+                  <ul>
+                    <li
+                      className={`menu-item text-2xl transform origin-bottom font-bold p-5 cursor-pointer ${activeNav === 'home' ? 'text-primary' : ''}`}
+                    >
+                      <span color="foreground" onClick={() => scrollToHome()}>
+                        Home
+                      </span>
+                    </li>
+                    <li className="menu-item text-2xl transform origin-bottom font-bold p-5 cursor-pointer">
+                      <span color="foreground">Projects</span>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </SheetContent>
           </Sheet>
         )}
       </NavbarContent>

@@ -43,6 +43,11 @@ export function ContactForm() {
     },
   });
 
+  // Watch form fields
+  const { watch } = form;
+  const formValues = watch();
+  const isFormEmpty = Object.values(formValues).every(value => value === '');
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(() => console.log('submit'))} className="space-y-8">
@@ -101,9 +106,14 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button variant="solid" color="primary" type="submit">
-          Submit
-        </Button>
+        <div className="flex justify-between">
+          <Button variant={isFormEmpty ? 'solid' : 'flat'} color="primary" disabled={!isFormEmpty}>
+            Use Email Client
+          </Button>
+          <Button variant="solid" color="primary" type="submit">
+            Submit
+          </Button>
+        </div>
       </form>
     </Form>
   );
