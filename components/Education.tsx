@@ -23,7 +23,7 @@ export default function Education() {
               Education
             </h1>
           </div>
-          <Timeline className="mt-24 ">
+          <Timeline className="mt-24 pl-24">
             <TimelineItem>
               <TimelineConnector />
               <TimelineHeader>
@@ -31,13 +31,32 @@ export default function Education() {
                 <TimelineIcon className="pl-2">
                   <School2Icon />
                 </TimelineIcon>
-                <TimelineTitle className="pl-2 ">
-                  United States International University - Africa
-                </TimelineTitle>
+                <TimelineTitle className="pl-2 ">USIU - Nairobi</TimelineTitle>
               </TimelineHeader>
               <TimelineContent>
                 <TimelineDescription className="pl-2">
+                  United States International University - Africa
+                </TimelineDescription>
+                <TimelineDescription className="pl-2">
                   Completed a Year of Computer Science
+                </TimelineDescription>
+              </TimelineContent>
+            </TimelineItem>
+            <TimelineItem>
+              <TimelineConnector />
+              <TimelineHeader>
+                <TimelineTime>- 2020</TimelineTime>
+                <TimelineIcon className="pl-2">
+                  <School2Icon />
+                </TimelineIcon>
+                <TimelineTitle className="pl-2">BIS - Berlin</TimelineTitle>
+              </TimelineHeader>
+              <TimelineContent>
+                <TimelineDescription className="pl-2">
+                  Berlin International School
+                </TimelineDescription>
+                <TimelineDescription className="pl-2">
+                  International Baccalaureate Diploma
                 </TimelineDescription>
               </TimelineContent>
             </TimelineItem>
@@ -48,28 +67,13 @@ export default function Education() {
                 <TimelineIcon className="pl-2">
                   <School2Icon />
                 </TimelineIcon>
-                <TimelineTitle className="pl-2">Berlin International School</TimelineTitle>
+                <TimelineTitle className="pl-2">IUBH - Berlin</TimelineTitle>
               </TimelineHeader>
               <TimelineContent>
                 <TimelineDescription className="pl-2">
-                  International Baccalaureate Diploma
+                  IUBH Internationale Hochschule
                 </TimelineDescription>
-              </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-              <TimelineConnector />
-              <TimelineHeader>
-                <TimelineTime>- 2022</TimelineTime>
-                <TimelineIcon className="pl-2">
-                  <School2Icon />
-                </TimelineIcon>
-                <TimelineTitle className="pl-2">
-                  IUBH Internationale Hochschule - Berlin
-                </TimelineTitle>
-              </TimelineHeader>
-              <TimelineContent>
                 <TimelineDescription className="pl-2">
-                  {' '}
                   Completed a Year of Computer Science
                 </TimelineDescription>
               </TimelineContent>
@@ -81,9 +85,10 @@ export default function Education() {
                 <TimelineIcon className="pl-2">
                   <School2Icon />
                 </TimelineIcon>
-                <TimelineTitle className="pl-2">Karel de Grote - Belgium </TimelineTitle>
+                <TimelineTitle className="pl-2">KdG - Antwerp </TimelineTitle>
               </TimelineHeader>
               <TimelineContent>
+                <TimelineDescription className="pl-2">Karel de Grote </TimelineDescription>
                 <TimelineDescription className="pl-2">Bs.C Computer Science</TimelineDescription>
               </TimelineContent>
             </TimelineItem>

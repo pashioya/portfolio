@@ -5,7 +5,7 @@ import { Github, Rss } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="fixed bottom-0 left-0 right-0 flex justify-center align-middle items-center p-5 bg-radial-gradient bg-auto leading-4 ">
+    <footer className="fixed bottom-0 left-0 right-0 flex justify-center align-middle items-center p-5 bg-radial-gradient bg-auto leading-4 bg-radial-gradient bg-transparent">
       <p>
         Built with
         <PopOverComponent
