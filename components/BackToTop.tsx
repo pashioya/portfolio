@@ -24,7 +24,7 @@ export default function BackToTop() {
   }
 
   return (
-    <div className="fixed top-28 right-0 rounded-full">
+    <div className="fixed top-28 right-0 rounded-full z-[100]">
       <svg
         onClick={scrollToHome}
         viewBox="0 0 100 100"
@@ -38,7 +38,7 @@ export default function BackToTop() {
           r="30"
           pathLength="1"
           strokeWidth="5"
-          className="stroke-red-500 opacity-20"
+          className="stroke-primary opacity-20"
         />
         <circle
           ref={progressWheelRef}
@@ -48,7 +48,7 @@ export default function BackToTop() {
           strokeDasharray={`0 1`}
           pathLength="1"
           strokeWidth="5"
-          className="stroke-red-500 "
+          className="stroke-primary"
         />
       </svg>
     </div>
