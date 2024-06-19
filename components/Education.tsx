@@ -1,3 +1,17 @@
+import { School2Icon } from 'lucide-react';
+import {
+  DottedTimelineConnector,
+  Timeline,
+  TimelineConnector,
+  TimelineContent,
+  TimelineDescription,
+  TimelineHeader,
+  TimelineIcon,
+  TimelineItem,
+  TimelineTime,
+  TimelineTitle,
+} from './TimeLine';
+
 export default function Education() {
   return (
     <div className="pt-28 w-full" id="Education">
@@ -9,6 +23,71 @@ export default function Education() {
               Education
             </h1>
           </div>
+          <Timeline className="mt-24 ">
+            <TimelineItem>
+              <TimelineConnector />
+              <TimelineHeader>
+                <TimelineTime>- 2018</TimelineTime>
+                <TimelineIcon className="pl-2">
+                  <School2Icon />
+                </TimelineIcon>
+                <TimelineTitle className="pl-2 ">
+                  United States International University - Africa
+                </TimelineTitle>
+              </TimelineHeader>
+              <TimelineContent>
+                <TimelineDescription className="pl-2">
+                  Completed a Year of Computer Science
+                </TimelineDescription>
+              </TimelineContent>
+            </TimelineItem>
+            <TimelineItem>
+              <TimelineConnector />
+              <TimelineHeader>
+                <TimelineTime>- 2021</TimelineTime>
+                <TimelineIcon className="pl-2">
+                  <School2Icon />
+                </TimelineIcon>
+                <TimelineTitle className="pl-2">Berlin International School</TimelineTitle>
+              </TimelineHeader>
+              <TimelineContent>
+                <TimelineDescription className="pl-2">
+                  International Baccalaureate Diploma
+                </TimelineDescription>
+              </TimelineContent>
+            </TimelineItem>
+            <TimelineItem>
+              <TimelineConnector />
+              <TimelineHeader>
+                <TimelineTime>- 2022</TimelineTime>
+                <TimelineIcon className="pl-2">
+                  <School2Icon />
+                </TimelineIcon>
+                <TimelineTitle className="pl-2">
+                  IUBH Internationale Hochschule - Berlin
+                </TimelineTitle>
+              </TimelineHeader>
+              <TimelineContent>
+                <TimelineDescription className="pl-2">
+                  {' '}
+                  Completed a Year of Computer Science
+                </TimelineDescription>
+              </TimelineContent>
+            </TimelineItem>
+            <TimelineItem>
+              <DottedTimelineConnector />
+              <TimelineHeader>
+                <TimelineTime>- 2024</TimelineTime>
+                <TimelineIcon className="pl-2">
+                  <School2Icon />
+                </TimelineIcon>
+                <TimelineTitle className="pl-2">Karel de Grote - Belgium </TimelineTitle>
+              </TimelineHeader>
+              <TimelineContent>
+                <TimelineDescription className="pl-2">Bs.C Computer Science</TimelineDescription>
+              </TimelineContent>
+            </TimelineItem>
+          </Timeline>
         </div>
       </div>
     </div>
