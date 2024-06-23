@@ -1,3 +1,4 @@
+'use client';
 import React, { type ReactElement, useRef } from 'react';
 import {
   motion,
