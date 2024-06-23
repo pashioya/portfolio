@@ -16,6 +16,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useTheme } from 'next-themes';
+import ThemeToggle from './ThemeToggle';
 
 type HeaderProps = {
   activeNav: string;
@@ -110,8 +111,8 @@ export default function Header({ activeNav }: HeaderProps) {
               <Menu className="text-primary" />
             </SheetTrigger>
             <SheetContent draggable>
-              <div>
-                <nav className="menu">
+              <div className="h-[100%]">
+                <nav className="menu h-[96%]">
                   <ul>
                     <li
                       className={`menu-item text-2xl transform origin-bottom font-bold p-5 cursor-pointer ${activeNav === 'home' ? 'text-primary' : ''}`}
@@ -125,6 +126,13 @@ export default function Header({ activeNav }: HeaderProps) {
                     </li>
                   </ul>
                 </nav>
+                <div>
+                  <ul>
+                    <li className="menu-item w-[100%] text-2xl transform  cursor-pointer">
+                      <ThemeToggle />
+                    </li>
+                  </ul>
+                </div>
               </div>
             </SheetContent>
           </Sheet>
