@@ -22,37 +22,26 @@ type HeaderProps = {
   activeNav: string;
 };
 
+function scrollToHome() {
+  const e = document.getElementById('home-separator');
+  e?.scrollIntoView({
+    block: 'start',
+    behavior: 'smooth',
+    inline: 'center',
+  });
+}
+
 export default function Header({ activeNav }: HeaderProps) {
   const isDesktop = useMediaQuery('(min-width: 642px)');
   const { theme, setTheme } = useTheme();
 
-  function scrollToHome() {
-    const e = document.getElementById('home');
-    e?.scrollIntoView({
-      block: 'start',
-      behavior: 'smooth',
-      inline: 'center',
-    });
-  }
-
-  function scrollToAboutMe() {
-    const e = document.getElementById('about-me');
-    e?.scrollIntoView({
-      block: 'start',
-      behavior: 'smooth',
-      inline: 'center',
-    });
-  }
-
   return (
     <Navbar
       shouldHideOnScroll
-      position="static"
       classNames={{
         item: [
           'flex',
           'relative',
-          'z-[100]',
           'top-0',
           'h-full',
           'items-center',
@@ -73,17 +62,12 @@ export default function Header({ activeNav }: HeaderProps) {
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem isActive={activeNav === 'home'}>
-          <Link color="foreground" href="#" onClick={() => scrollToHome()}>
+          <Link color="foreground" href="/" onClick={() => scrollToHome()}>
             Home
           </Link>
         </NavbarItem>
-        <NavbarItem isActive={activeNav === 'about-me'}>
-          <Link href="#" aria-current="page" onClick={() => scrollToAboutMe()}>
-            About
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
+        <NavbarItem isActive={activeNav === 'projects'}>
+          <Link color="foreground" href="/projects">
             Projects
           </Link>
         </NavbarItem>
@@ -122,7 +106,9 @@ export default function Header({ activeNav }: HeaderProps) {
                       </span>
                     </li>
                     <li className="menu-item text-2xl transform origin-bottom font-bold p-5 cursor-pointer">
-                      <span color="foreground">Projects</span>
+                      <Link href="/projects">
+                        <span color="foreground">Projects</span>
+                      </Link>
                     </li>
                   </ul>
                 </nav>

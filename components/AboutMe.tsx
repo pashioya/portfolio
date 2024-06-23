@@ -17,7 +17,7 @@ export default function AboutMe() {
             <Card isPressable className="col-span-12 w-[90%] sm:w-[50%] sm:col-span-4 h-[300px]">
               <CardHeader className="absolute z-10 top-1 flex-col !items-start">
                 <h4 className="text-white font-medium text-2xl mb-1">Experience</h4>
-                <p className="text-tiny text-muted-foreground uppercase">
+                <p className="text-tiny text-gray-100 uppercase">
                   2+ Years of Software Development
                 </p>
                 <Users size={24} color="white" />
@@ -33,8 +33,8 @@ export default function AboutMe() {
             <Card isPressable className="col-span-12 w-[90%] sm:w-[50%] sm:col-span-4 h-[300px]">
               <CardHeader className="absolute  z-10 top-1 flex-col  !items-start">
                 <h4 className="text-white font-medium text-2xl mb-1">Education</h4>
-                <p className="text-tiny text-muted-foreground uppercase">IB Graduate</p>
-                <p className="text-tiny text-muted-foreground uppercase">Computer Science Degree</p>
+                <p className="text-tiny text-gray-100 uppercase">IB Graduate</p>
+                <p className="text-tiny text-gray-100 uppercase">Computer Science Degree</p>
                 <RibbonIcon size={24} color="white" />
               </CardHeader>
               <Image
