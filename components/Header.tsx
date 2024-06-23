@@ -22,15 +22,6 @@ type HeaderProps = {
   activeNav: string;
 };
 
-function scrollToHome() {
-  const e = document.getElementById('home-separator');
-  e?.scrollIntoView({
-    block: 'start',
-    behavior: 'smooth',
-    inline: 'center',
-  });
-}
-
 export default function Header({ activeNav }: HeaderProps) {
   const isDesktop = useMediaQuery('(min-width: 642px)');
   const { theme, setTheme } = useTheme();
@@ -61,15 +52,11 @@ export default function Header({ activeNav }: HeaderProps) {
         <p className="font-bold text-inherit">Paul Ashioya</p>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem isActive={activeNav === 'home'}>
-          <Link color="foreground" href="/" onClick={() => scrollToHome()}>
-            Home
-          </Link>
+        <NavbarItem isActive={activeNav === 'home'} as={Link} href={'/'}>
+          Home
         </NavbarItem>
-        <NavbarItem isActive={activeNav === 'projects'}>
-          <Link color="foreground" href="/projects">
-            Projects
-          </Link>
+        <NavbarItem isActive={activeNav === 'projects'} as={Link} href={'/projects'}>
+          Projects
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
@@ -98,18 +85,20 @@ export default function Header({ activeNav }: HeaderProps) {
               <div className="h-[100%]">
                 <nav className="menu h-[96%]">
                   <ul>
-                    <li
-                      className={`menu-item text-2xl transform origin-bottom font-bold p-5 cursor-pointer ${activeNav === 'home' ? 'text-primary' : ''}`}
-                    >
-                      <span color="foreground" onClick={() => scrollToHome()}>
-                        Home
-                      </span>
-                    </li>
-                    <li className="menu-item text-2xl transform origin-bottom font-bold p-5 cursor-pointer">
-                      <Link href="/projects">
+                    <Link href="/">
+                      <li
+                        className={`menu-item text-2xl transform origin-bottom font-bold p-5 cursor-pointer ${activeNav === 'home' ? 'text-primary' : ''}`}
+                      >
+                        <span color="foreground">Home</span>
+                      </li>
+                    </Link>
+                    <Link href="/projects">
+                      <li
+                        className={`menu-item text-2xl transform origin-bottom font-bold p-5 cursor-pointer ${activeNav === 'projects' ? 'text-primary' : ''}`}
+                      >
                         <span color="foreground">Projects</span>
-                      </Link>
-                    </li>
+                      </li>
+                    </Link>
                   </ul>
                 </nav>
                 <div>
