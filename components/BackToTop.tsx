@@ -24,7 +24,7 @@ export default function BackToTop() {
   }
 
   return (
-    <div className="fixed top-28 right-0 rounded-full z-[100]">
+    <div className="fixed top-28 right-0 rounded-full z-10">
       <svg
         onClick={scrollToHome}
         viewBox="0 0 100 100"
