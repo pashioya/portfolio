@@ -1,3 +1,4 @@
+'use client';
 import { useScroll } from 'framer-motion';
 import { useRef, useEffect } from 'react';
 

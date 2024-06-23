@@ -3,6 +3,15 @@ import ContactMe from './ContactMe';
 import { Button } from '@nextui-org/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
+function scrollToAboutMe() {
+  const e = document.getElementById('about-me');
+  e?.scrollIntoView({
+    block: 'start',
+    behavior: 'smooth',
+    inline: 'center',
+  });
+}
+
 export default function HeroSection() {
   return (
     <div className="pt-28" id="home">
@@ -23,7 +32,7 @@ export default function HeroSection() {
           </div>
           <div className="mt-8 gap-3 flex justify-center">
             <ContactMe />
-            <Button size={'lg'} variant={'faded'}>
+            <Button size={'lg'} variant={'faded'} onClick={() => scrollToAboutMe()}>
               Learn more
             </Button>
           </div>

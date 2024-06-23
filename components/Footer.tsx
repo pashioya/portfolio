@@ -2,6 +2,9 @@ import { Code } from '@nextui-org/code';
 import { PopOverComponent } from './PopOverComponent';
 import { Button } from '@nextui-org/button';
 import { Github, Rss } from 'lucide-react';
+import { TbBrandNextjs } from 'react-icons/tb';
+import Link from 'next/link';
+import { SiNextui, SiShadcnui } from 'react-icons/si';
 
 export function Footer() {
   return (
@@ -11,13 +14,13 @@ export function Footer() {
         <PopOverComponent
           trigger={<Code color="primary">NextJS</Code>}
           content={
-            <div className="p-1">
-              <p>Are You Sure You Wanna Go? </p>
+            <div className="p-1 items-center flex flex-col gap-4">
+              <TbBrandNextjs size={40} />
               <div className="flex justify-center gap-2">
-                <Button color="primary">
+                <Button color="primary" as={Link} href="https://github.com/vercel/next.js">
                   <Github />
                 </Button>
-                <Button variant="bordered" color="primary">
+                <Button variant="bordered" color="primary" as={Link} href="https://nextjs.org/">
                   <Rss />
                 </Button>
               </div>
@@ -28,13 +31,14 @@ export function Footer() {
         <PopOverComponent
           trigger={<Code color="primary">NextUI</Code>}
           content={
-            <div className="p-1">
-              <p>Are You Sure You Wanna Go? </p>
+            <div className="p-1 items-center flex flex-col gap-4">
+              <SiNextui size={40} />
+
               <div className="flex justify-center gap-2">
-                <Button color="primary">
+                <Button color="primary" as={Link} href="https://github.com/nextui-org/nextui">
                   <Github />
                 </Button>
-                <Button variant="bordered" color="primary">
+                <Button variant="bordered" color="primary" as={Link} href="https://nextui.org/">
                   <Rss />
                 </Button>
               </div>
@@ -45,13 +49,13 @@ export function Footer() {
         <PopOverComponent
           trigger={<Code color="primary">Shadcn/ui</Code>}
           content={
-            <div className="p-1">
-              <p>Are You Sure You Wanna Go? </p>
+            <div className="p-1 items-center flex flex-col gap-4">
+              <SiShadcnui size={40} />
               <div className="flex justify-center gap-2">
-                <Button color="primary">
+                <Button color="primary" as={Link} href="https://github.com/shadcn-ui/ui">
                   <Github />
                 </Button>
-                <Button variant="bordered" color="primary">
+                <Button variant="bordered" color="primary" as={Link} href="https://ui.shadcn.com">
                   <Rss />
                 </Button>
               </div>

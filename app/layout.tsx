@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { NextUIProvider } from '@nextui-org/system';
+import { ThemeProvider as NextThemesProvider } from 'next-themes';
+import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Paul Ashioya',
@@ -12,8 +15,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html suppressHydrationWarning={true} lang="en">
-      <body suppressHydrationWarning={true}>{children}</body>
+    <html lang="en">
+      <body>
+        <NextUIProvider>
+          <NextThemesProvider attribute="class" defaultTheme="dark">
+            <main className=" flex h-[100%] justify-center flex-col items-center overflow-visible">
+              {children}
+            </main>
+            <Footer />
+          </NextThemesProvider>
+        </NextUIProvider>
+      </body>
     </html>
   );
 }
