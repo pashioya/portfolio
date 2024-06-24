@@ -82,23 +82,19 @@ export default function Header({ activeNav }: HeaderProps) {
             </SheetTrigger>
             <SheetContent draggable>
               <div className="h-[100%]">
-                <nav className="menu h-[96%]">
-                  <ul>
-                    <Link href="/">
-                      <li
-                        className={`menu-item text-2xl transform origin-bottom font-bold p-5 cursor-pointer ${activeNav === 'home' ? 'text-primary' : ''}`}
-                      >
-                        <span color="foreground">Home</span>
-                      </li>
-                    </Link>
-                    <Link href="/projects">
-                      <li
-                        className={`menu-item text-2xl transform origin-bottom font-bold p-5 cursor-pointer ${activeNav === 'projects' ? 'text-primary' : ''}`}
-                      >
-                        <span color="foreground">Projects</span>
-                      </li>
-                    </Link>
-                  </ul>
+                <nav className="menu h-[96%] flex flex-col">
+                  <Link
+                    href="/"
+                    className={`menu-item text-2xl transform origin-bottom font-bold p-5 cursor-pointer ${activeNav === 'home' ? 'text-primary' : ''}`}
+                  >
+                    <span color="foreground">Home</span>
+                  </Link>
+                  <Link
+                    href="/projects"
+                    className={`menu-item text-2xl transform origin-bottom font-bold p-5 cursor-pointer ${activeNav === 'projects' ? 'text-primary' : ''}`}
+                  >
+                    <span color="foreground">Projects</span>
+                  </Link>
                 </nav>
                 <div>
                   <ul>

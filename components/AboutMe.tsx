@@ -47,10 +47,8 @@ export default function AboutMe() {
             </Card>
           </div>
           <p className="pt-12 text-muted-foreground text-xl">
-            Eiusmod sunt fugiat veniam officia sint labore et ullamco laboris cillum. Dolor velit
-            dolor consectetur reprehenderit id ut esse aute dolor nisi excepteur enim elit
-            adipisicing. Consequat occaecat amet do cillum nulla. Nostrud consequat dolor velit
-            reprehenderit esse do laboris enim. Mollit amet sunt cillum nulla elit.
+            I love exploring and creating 🚀, im a lifelong learner and might be a little obsessed
+            with pickles 🥒
           </p>
         </div>
       </div>

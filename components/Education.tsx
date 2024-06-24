@@ -14,7 +14,7 @@ import {
 
 export default function Education() {
   return (
-    <div className="pt-28 w-full" id="Education">
+    <div className="pt-28 w-full" id="education">
       <div className="container flex flex-row justify-center gap-10 py-10 lg:py-16">
         <div className="max-w-2xl text-center mx-auto">
           <p className="text-xl text-muted-foreground">Explore my</p>
@@ -27,7 +27,11 @@ export default function Education() {
             <TimelineItem>
               <TimelineConnector />
               <TimelineHeader>
-                <TimelineTime>- 2018</TimelineTime>
+                <TimelineTime>
+                  <span className="flex flex-row gap-2">
+                    <span className=" md:hidden flex">-</span> 2018
+                  </span>
+                </TimelineTime>
                 <TimelineIcon className="pl-2">
                   <School2Icon />
                 </TimelineIcon>
@@ -45,7 +49,11 @@ export default function Education() {
             <TimelineItem>
               <TimelineConnector />
               <TimelineHeader>
-                <TimelineTime>- 2020</TimelineTime>
+                <TimelineTime>
+                  <span className="flex flex-row gap-2">
+                    <span className=" md:hidden flex">-</span> 2020
+                  </span>
+                </TimelineTime>
                 <TimelineIcon className="pl-2">
                   <School2Icon />
                 </TimelineIcon>
@@ -63,7 +71,11 @@ export default function Education() {
             <TimelineItem>
               <TimelineConnector />
               <TimelineHeader>
-                <TimelineTime>- 2021</TimelineTime>
+                <TimelineTime>
+                  <span className="flex flex-row gap-2">
+                    <span className=" md:hidden flex">-</span> 2021
+                  </span>
+                </TimelineTime>
                 <TimelineIcon className="pl-2">
                   <School2Icon />
                 </TimelineIcon>
@@ -81,7 +93,11 @@ export default function Education() {
             <TimelineItem>
               <DottedTimelineConnector />
               <TimelineHeader>
-                <TimelineTime>- 2024</TimelineTime>
+                <TimelineTime>
+                  <span className="flex flex-row gap-2">
+                    <span className=" md:hidden flex">-</span> 2024
+                  </span>
+                </TimelineTime>
                 <TimelineIcon className="pl-2">
                   <School2Icon />
                 </TimelineIcon>

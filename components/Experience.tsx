@@ -28,25 +28,70 @@ export default function Experience() {
               Frontend
             </Code>
             <ParallaxText baseVelocity={-2}>
-              <FaReact size={50} />
-              <TbBrandTypescript size={50} />
-              <SiSolid size={50} />
-              <ImHtmlFive2 size={50} />
-              <RiTailwindCssLine size={50} />
-              <SiShadcnui size={50} />
-              <FaAngular size={50} />
+              <div className="items-center justify-center flex flex-col">
+                <FaReact size={50} />
+                <p>React</p>
+              </div>
+              <div className="items-center justify-center flex flex-col">
+                <TbBrandTypescript size={50} />
+                <p>TypeScript</p>
+              </div>
+
+              <div className="items-center justify-center flex flex-col">
+                <SiSolid size={50} />
+                <p>Solid</p>
+              </div>
+
+              <div className="items-center justify-center flex flex-col">
+                <ImHtmlFive2 size={50} />
+                <p>Html</p>
+              </div>
+
+              <div className="items-center justify-center flex flex-col">
+                <RiTailwindCssLine size={50} />
+                <p>Tailwind</p>
+              </div>
+
+              <div className="items-center justify-center flex flex-col">
+                <SiShadcnui size={50} />
+                <p>Shadcn/ui</p>
+              </div>
+
+              <div className="items-center justify-center flex flex-col">
+                <FaAngular size={50} />
+                <p>Angular</p>
+              </div>
             </ParallaxText>
             <div />
             <Code color="primary" className="text-2xl -rotate-12 mt-4 mb-2 self-start">
               Backend
             </Code>
             <ParallaxText baseVelocity={2}>
-              <FaJava size={50} />
-              <FaNodeJs size={50} />
-              <FaRust size={50} />
-              <SiSpring size={50} />
-              <AiOutlineDotNet size={50} />
-              <SiExpress size={50} />
+              <div className="items-center justify-center flex flex-col">
+                <FaJava size={50} />
+                <p>Java</p>
+              </div>
+              <div className="items-center justify-center flex flex-col">
+                <FaNodeJs size={50} />
+                <p>NodeJS</p>
+              </div>
+              <div className="items-center justify-center flex flex-col">
+                <FaRust size={50} />
+                <p>Rust</p>
+              </div>
+
+              <div className="items-center justify-center flex flex-col">
+                <SiSpring size={50} />
+                <p>Spring</p>
+              </div>
+              <div className="items-center justify-center flex flex-col">
+                <AiOutlineDotNet size={50} />
+                <p>DotNet</p>
+              </div>
+              <div className="items-center justify-center flex flex-col">
+                <SiExpress size={50} />
+                <p>ExpressJS</p>
+              </div>
             </ParallaxText>
             <div />
 
@@ -55,22 +100,40 @@ export default function Experience() {
             </Code>
 
             <ParallaxText baseVelocity={-2}>
-              <TbBrandPython size={50} />
-              <VscAzure size={50} />
-              <SiGooglecloud size={50} />
-              <LiaDocker size={50} />
-              <DiPostgresql size={50} />
-              <DiMsqlServer size={50} />
-              <SiNeo4J size={50} />
-              <TbBrandMongodb size={50} />
+              <div className="items-center justify-center flex flex-col">
+                <TbBrandPython size={50} />
+                <p>Python</p>
+              </div>
+              <div className="items-center justify-center flex flex-col">
+                <VscAzure size={50} />
+                <p>Azure</p>
+              </div>
+              <div className="items-center justify-center flex flex-col">
+                <SiGooglecloud size={50} />
+                <p>GCloud</p>
+              </div>
+              <div className="items-center justify-center flex flex-col">
+                <LiaDocker size={50} />
+                <p>Docker</p>
+              </div>
+              <div className="items-center justify-center flex flex-col">
+                <DiPostgresql size={50} />
+                <p>Postgresql</p>
+              </div>
+              <div className="items-center justify-center flex flex-col">
+                <DiMsqlServer size={50} />
+                <p>MsSql</p>
+              </div>
+              <div className="items-center justify-center flex flex-col">
+                <SiNeo4J size={50} />
+                <p>Neo4J</p>
+              </div>
+              <div className="items-center justify-center flex flex-col">
+                <TbBrandMongodb size={50} />
+                <p>MongoDB</p>
+              </div>
             </ParallaxText>
           </div>
-          <p className="pt-12 text-muted-foreground text-xl">
-            Eiusmod sunt fugiat veniam officia sint labore et ullamco laboris cillum. Dolor velit
-            dolor consectetur reprehenderit id ut esse aute dolor nisi excepteur enim elit
-            adipisicing. Consequat occaecat amet do cillum nulla. Nostrud consequat dolor velit
-            reprehenderit esse do laboris enim. Mollit amet sunt cillum nulla elit.
-          </p>
         </div>
       </div>
     </div>
