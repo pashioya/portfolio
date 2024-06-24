@@ -47,8 +47,8 @@ export default function AboutMe() {
             </Card>
           </div>
           <p className="pt-12 text-muted-foreground text-xl">
-            I love exploring and creating, im a lifelong learner and might be a little obsessed with
-            pickles
+            I love exploring and creating 🚀, im a lifelong learner and might be a little obsessed
+            with pickles 🥒
           </p>
         </div>
       </div>

@@ -28,9 +28,9 @@ export default function Education() {
               <TimelineConnector />
               <TimelineHeader>
                 <TimelineTime>
-                  <div className="flex flex-row gap-2">
-                    <p className=" sm:hidden flex">-</p> 2018
-                  </div>
+                  <span className="flex flex-row gap-2">
+                    <span className=" md:hidden flex">-</span> 2018
+                  </span>
                 </TimelineTime>
                 <TimelineIcon className="pl-2">
                   <School2Icon />
@@ -50,9 +50,9 @@ export default function Education() {
               <TimelineConnector />
               <TimelineHeader>
                 <TimelineTime>
-                  <div className="flex flex-row gap-2">
-                    <p className=" sm:hidden flex">-</p> 2020
-                  </div>
+                  <span className="flex flex-row gap-2">
+                    <span className=" md:hidden flex">-</span> 2020
+                  </span>
                 </TimelineTime>
                 <TimelineIcon className="pl-2">
                   <School2Icon />
@@ -72,9 +72,9 @@ export default function Education() {
               <TimelineConnector />
               <TimelineHeader>
                 <TimelineTime>
-                  <div className="flex flex-row gap-2">
-                    <p className=" sm:hidden flex">-</p> 2021
-                  </div>
+                  <span className="flex flex-row gap-2">
+                    <span className=" md:hidden flex">-</span> 2021
+                  </span>
                 </TimelineTime>
                 <TimelineIcon className="pl-2">
                   <School2Icon />
@@ -94,9 +94,9 @@ export default function Education() {
               <DottedTimelineConnector />
               <TimelineHeader>
                 <TimelineTime>
-                  <div className="flex flex-row gap-2">
-                    <p className=" sm:hidden flex">-</p> 2024
-                  </div>
+                  <span className="flex flex-row gap-2">
+                    <span className=" md:hidden flex">-</span> 2024
+                  </span>
                 </TimelineTime>
                 <TimelineIcon className="pl-2">
                   <School2Icon />
