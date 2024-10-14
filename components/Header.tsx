@@ -27,7 +27,7 @@ export default function Header({ activeNav }: HeaderProps) {
 
   return (
     <Navbar
-      shouldHideOnScroll
+      shouldHideOnScroll={false}
       classNames={{
         item: [
           'flex',
