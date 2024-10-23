@@ -54,9 +54,9 @@ export default function Header({ activeNav }: HeaderProps) {
         <NavbarItem isActive={activeNav === 'home'} as={Link} href={'/'}>
           Home
         </NavbarItem>
-        <NavbarItem isActive={activeNav === 'projects'} as={Link} href={'/projects'}>
+        {/* <NavbarItem isActive={activeNav === 'projects'} as={Link} href={'/projects'}>
           Projects
-        </NavbarItem>
+        </NavbarItem> */}
       </NavbarContent>
       <NavbarContent justify="end">
         {isDesktop ? (
