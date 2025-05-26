@@ -1,5 +1,0 @@
-{
-  "prettier.configPath": ".prettierrc",
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
-}
