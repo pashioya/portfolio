@@ -3,6 +3,7 @@ import './globals.css';
 import { NextUIProvider } from '@nextui-org/system';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import { Footer } from '@/components/Footer';
+import RenovationNotice from '@/components/RenovationNotice';
 
 export const metadata: Metadata = {
   title: 'Paul Ashioya',
@@ -19,9 +20,10 @@ export default function RootLayout({
       <body>
         <NextUIProvider>
           <NextThemesProvider attribute="class" defaultTheme="dark">
-            <main className=" flex h-[100%] justify-center flex-col items-center overflow-visible">
+            <main className=" flex w-screen h-[100%] justify-center flex-col items-center overflow-visible">
               {children}
             </main>
+            <RenovationNotice />
             <Footer />
           </NextThemesProvider>
         </NextUIProvider>

@@ -1,7 +1,7 @@
 'use client';
-import ContactMe from './ContactMe';
 import { Button } from '@nextui-org/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 function scrollToAboutMe() {
   const e = document.getElementById('about-me');
@@ -31,7 +31,12 @@ export default function HeroSection() {
             <p className="text-xl text-muted-foreground">Full-Stack Developer </p>
           </div>
           <div className="mt-8 gap-3 flex justify-center">
-            <ContactMe />
+            <Button>
+              <FaLinkedin size={50} />
+            </Button>
+            <Button>
+              <FaGithub size={50} />
+            </Button>
             <Button size={'lg'} variant={'faded'} onClick={() => scrollToAboutMe()}>
               Learn more
             </Button>
