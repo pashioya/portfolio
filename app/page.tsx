@@ -20,7 +20,7 @@ export default function Home() {
           className="h-full w-full"
         />
         <div
-          className="absolute inset-0 bg-linear-to-b from-[#0a0620]/70 via-[#05030f]/35 to-[#05030f]"
+          className="absolute inset-0 bg-gradient-to-b from-[#0a0620]/70 via-[#05030f]/35 to-[#05030f]"
           aria-hidden="true"
         />
         <div
@@ -75,7 +75,7 @@ export default function Home() {
             variant="outline"
             className="min-w-40 border-white/30 bg-white/5 text-white hover:border-white/60 hover:bg-white"
           >
-            <a href="mailto:john.ashiya@gmail.com">Contact</a>
+            <a href="mailto:john.ashioya@gmail.com">Contact</a>
           </Button>
         </div>
       </main>
