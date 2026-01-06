@@ -1,33 +1,34 @@
-import type { Metadata } from 'next';
-import './globals.css';
-import { NextUIProvider } from '@nextui-org/system';
-import { ThemeProvider as NextThemesProvider } from 'next-themes';
-import { Footer } from '@/components/Footer';
-import RenovationNotice from '@/components/RenovationNotice';
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+
+const geistSans = Geist({
+    variable: "--font-geist-sans",
+    subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+    variable: "--font-geist-mono",
+    subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
-  title: 'Paul Ashioya',
-  description: 'Portfolio of Paul Ashioya',
+    title: "Portfolio of Paul Ashioya",
+    description: "Portfolio of Paul Ashioya, Backend Developer",
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body>
-        <NextUIProvider>
-          <NextThemesProvider attribute="class" defaultTheme="dark">
-            <main className=" flex w-screen h-[100%] justify-center flex-col items-center overflow-visible">
-              {children}
-            </main>
-            <RenovationNotice />
-            <Footer />
-          </NextThemesProvider>
-        </NextUIProvider>
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en">
+            <body
+                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+            >
+                {children}
+            </body>
+        </html>
+    );
 }
