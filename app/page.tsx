@@ -30,42 +30,60 @@ export default function Home() {
                         Backend Developer
                     </p>
                     <div className="flex items-center justify-center gap-4">
-                        <a
-                            className="group rounded-full bg-white/10 p-3 text-white backdrop-blur transition-colors duration-75 hover:bg-white/20"
-                            href="https://www.linkedin.com/in/paul-ashioya/"
-                            aria-label="LinkedIn"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <Button
+                            asChild
+                            variant="ghost"
+                            size="icon"
+                            className="group rounded-full text-white"
                         >
-                            <SiLinkedin
-                                className="h-5 w-5 opacity-80 transition-opacity duration-75 group-hover:opacity-100"
-                                aria-hidden="true"
-                            />
-                        </a>
-                        <a
-                            className="group rounded-full bg-white/10 p-3 text-white backdrop-blur transition-colors duration-75 hover:bg-white/20"
-                            href="https://github.com/pashioya"
-                            aria-label="GitHub"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            <a
+                                href="https://www.linkedin.com/in/paul-ashioya/"
+                                aria-label="LinkedIn"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <SiLinkedin
+                                    className="h-5 w-5 opacity-80 transition-opacity duration-75 group-hover:opacity-100"
+                                    aria-hidden="true"
+                                />
+                            </a>
+                        </Button>
+                        <Button
+                            asChild
+                            variant="ghost"
+                            size="icon"
+                            className="group rounded-full text-white "
                         >
-                            <SiGithub
-                                className="h-5 w-5 opacity-80 transition-opacity duration-75 group-hover:opacity-100"
-                                aria-hidden="true"
-                            />
-                        </a>
-                        <a
-                            className="group rounded-full bg-white/10 p-3 text-white backdrop-blur transition-colors duration-75 hover:bg-white/20"
-                            href="https://www.instagram.com/paul.ashioya/"
-                            aria-label="Instagram"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            <a
+                                href="https://github.com/pashioya"
+                                aria-label="GitHub"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <SiGithub
+                                    className="h-5 w-5 opacity-80 transition-opacity duration-75 group-hover:opacity-100"
+                                    aria-hidden="true"
+                                />
+                            </a>
+                        </Button>
+                        <Button
+                            asChild
+                            variant="ghost"
+                            size="icon"
+                            className="group rounded-full text-white"
                         >
-                            <SiInstagram
-                                className="h-5 w-5 opacity-80 transition-opacity duration-75 group-hover:opacity-100"
-                                aria-hidden="true"
-                            />
-                        </a>
+                            <a
+                                href="https://www.instagram.com/paul.ashioya/"
+                                aria-label="Instagram"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <SiInstagram
+                                    className="h-5 w-5 opacity-80 transition-opacity duration-75 group-hover:opacity-100"
+                                    aria-hidden="true"
+                                />
+                            </a>
+                        </Button>
                     </div>
                 </div>
 
@@ -86,7 +104,7 @@ export default function Home() {
                     <Button
                         asChild
                         variant="outline"
-                        className="min-w-40 border-white/30 bg-white/5 text-white hover:border-white/60 hover:bg-white hover:text-slate-900"
+                        className="min-w-40 text-black"
                     >
                         <a
                             href="mailto:john.ashioya@gmail.com"
