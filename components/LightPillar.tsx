@@ -276,7 +276,7 @@ const LightPillar: React.FC<LightPillarProps> = ({
 
         // Animation loop with fixed timestep
         let lastTime = performance.now();
-        const targetFPS = 60;
+        const targetFPS = interactive ? 60 : 30;
         const frameTime = 1000 / targetFPS;
 
         const animate = (currentTime: number) => {
@@ -291,7 +291,8 @@ const LightPillar: React.FC<LightPillarProps> = ({
             const deltaTime = currentTime - lastTime;
 
             if (deltaTime >= frameTime) {
-                timeRef.current += 0.016 * rotationSpeed;
+                const clampedDeltaMs = Math.min(deltaTime, 50);
+                timeRef.current += (clampedDeltaMs / 1000) * rotationSpeed;
                 materialRef.current.uniforms.uTime.value = timeRef.current;
                 rendererRef.current.render(sceneRef.current, cameraRef.current);
                 lastTime = currentTime - (deltaTime % frameTime);
@@ -329,6 +330,10 @@ const LightPillar: React.FC<LightPillarProps> = ({
 
         // Cleanup
         return () => {
+            if (mouseMoveTimeout) {
+                clearTimeout(mouseMoveTimeout);
+                mouseMoveTimeout = null;
+            }
             if (resizeTimeout) {
                 clearTimeout(resizeTimeout);
                 resizeTimeout = null;
