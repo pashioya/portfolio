@@ -18,8 +18,10 @@ jobs:
             - name: Install cloudflared
               run: |
                   set -euo pipefail
-                  curl -fsSL "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64" -o /usr/local/bin/cloudflared
-                  chmod +x /usr/local/bin/cloudflared
+                  mkdir -p "$HOME/.local/bin"
+                  curl -fsSL "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64" -o "$HOME/.local/bin/cloudflared"
+                  chmod +x "$HOME/.local/bin/cloudflared"
+                  echo "$HOME/.local/bin" >> "$GITHUB_PATH"
                   cloudflared --version
 
             - name: Deploy (Cloudflare Access SSH + git pull)
@@ -27,7 +29,6 @@ jobs:
                   CF_ACCESS_CLIENT_ID: ${{ secrets.CF_ACCESS_CLIENT_ID }}
                   CF_ACCESS_CLIENT_SECRET: ${{ secrets.CF_ACCESS_CLIENT_SECRET }}
                   DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
-                  DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
                   DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
                   DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
                   DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
@@ -55,4 +56,5 @@ jobs:
                     git pull --ff-only; \
                     pnpm install --frozen-lockfile; \
                     pnpm run build; \
-                    sudo systemctl restart portfolio"
+                    sudo -n true; \
+                    sudo -n systemctl restart portfolio"
