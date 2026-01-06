@@ -46,15 +46,14 @@ jobs:
                   echo "$DEPLOY_SSH_KEY" > ~/.ssh/id_ed25519
                   chmod 600 ~/.ssh/id_ed25519
 
-                  ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=accept-new \
-                    -o ProxyCommand="cloudflared access ssh --hostname %h" \
-                    "$DEPLOY_USER@$DEPLOY_HOST" \
-                    "set -euo pipefail; \
-                    cd '$DEPLOY_PATH'; \
-                    git fetch --prune; \
-                    git checkout main; \
-                    git pull --ff-only; \
-                    pnpm install --frozen-lockfile; \
-                    pnpm run build; \
-                    sudo -n true; \
-                    sudo -n systemctl restart portfolio"
+                                    ssh -vvv -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=accept-new \
+                                        -o ProxyCommand="cloudflared access ssh --hostname %h --service-token-id ${CF_ACCESS_CLIENT_ID} --service-token-secret ${CF_ACCESS_CLIENT_SECRET} --loglevel=debug" \
+                        "$DEPLOY_USER@$DEPLOY_HOST" \
+                        "set -euo pipefail; \
+                        cd '$DEPLOY_PATH'; \
+                        git fetch --prune; \
+                        git checkout main; \
+                        git pull --rebase --ff-only; \
+                        pnpm install; \
+                        pnpm run build; \
+                        sudo -n /usr/bin/systemctl restart portfolio"
