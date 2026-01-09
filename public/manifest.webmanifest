@@ -1,0 +1,19 @@
+{
+    "name": "Paul Ashioya",
+    "short_name": "Ashioya",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#05030f",
+    "theme_color": "#05030f",
+    "description": "Portfolio of Paul Ashioya, Backend Developer",
+    "icons": [
+        {
+            "src": "/icons/favicon.svg",
+            "sizes": "512x512",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ]
+}

@@ -1,4 +1,5 @@
 import LightPillar from "@/components/LightPillar";
+import ShinyText from "@/components/ShinyText";
 import { Button } from "@/components/ui/button";
 import { SiGithub, SiInstagram, SiLinkedin } from "react-icons/si";
 
@@ -21,19 +22,28 @@ export default function Home() {
                 />
             </div>
 
-            <main className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center gap-10 px-6 py-16 text-center md:px-12">
-                <div className="space-y-6">
-                    <h1 className="text-2xl leading-tight md:text-6xl">
-                        Paul Ashioya
-                    </h1>
-                    <p className="max-w-2xl text-lg text-slate-200/80 md:text-xl">
+            <main className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center gap-12 px-6 py-16 text-center md:px-12">
+                <div className="space-y-7">
+                    <p className="text-sm uppercase tracking-[0.3em] text-slate-200/60 md:text-base">
                         Backend Developer
                     </p>
-                    <div className="flex items-center justify-center gap-4">
+                    <ShinyText
+                        text="Paul Ashioya"
+                        speed={2}
+                        delay={0}
+                        color="#b5b5b5"
+                        shineColor="#ffffff"
+                        spread={120}
+                        direction="left"
+                        yoyo={false}
+                        pauseOnHover={true}
+                        className="text-4xl leading-tight md:text-7xl"
+                    />
+                    <div className="flex items-center justify-center gap-5">
                         <Button
                             asChild
                             variant="ghost"
-                            size="icon"
+                            size="icon-lg"
                             className="group rounded-full text-white"
                         >
                             <a
@@ -43,7 +53,7 @@ export default function Home() {
                                 rel="noopener noreferrer"
                             >
                                 <SiLinkedin
-                                    className="h-5 w-5 opacity-80 transition-opacity duration-75 group-hover:opacity-100"
+                                    className="size-6 opacity-80 transition-opacity duration-75 group-hover:opacity-100"
                                     aria-hidden="true"
                                 />
                             </a>
@@ -51,8 +61,8 @@ export default function Home() {
                         <Button
                             asChild
                             variant="ghost"
-                            size="icon"
-                            className="group rounded-full text-white "
+                            size="icon-lg"
+                            className="group rounded-full text-white"
                         >
                             <a
                                 href="https://github.com/pashioya"
@@ -61,7 +71,7 @@ export default function Home() {
                                 rel="noopener noreferrer"
                             >
                                 <SiGithub
-                                    className="h-5 w-5 opacity-80 transition-opacity duration-75 group-hover:opacity-100"
+                                    className="size-6 opacity-80 transition-opacity duration-75 group-hover:opacity-100"
                                     aria-hidden="true"
                                 />
                             </a>
@@ -69,7 +79,7 @@ export default function Home() {
                         <Button
                             asChild
                             variant="ghost"
-                            size="icon"
+                            size="icon-lg"
                             className="group rounded-full text-white"
                         >
                             <a
@@ -79,7 +89,7 @@ export default function Home() {
                                 rel="noopener noreferrer"
                             >
                                 <SiInstagram
-                                    className="h-5 w-5 opacity-80 transition-opacity duration-75 group-hover:opacity-100"
+                                    className="size-6 opacity-80 transition-opacity duration-75 group-hover:opacity-100"
                                     aria-hidden="true"
                                 />
                             </a>
