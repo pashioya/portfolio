@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -15,6 +15,17 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
     title: "Portfolio of Paul Ashioya",
     description: "Portfolio of Paul Ashioya, Backend Developer",
+    manifest: "/manifest.webmanifest",
+    appleWebApp: {
+        capable: true,
+        statusBarStyle: "black-translucent",
+        title: "Paul Ashioya",
+    },
+};
+
+export const viewport: Viewport = {
+    themeColor: "#05030f",
+    viewportFit: "cover",
 };
 
 export default function RootLayout({
@@ -25,7 +36,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+                className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#05030f] min-h-screen overflow-hidden overscroll-none`}
             >
                 {children}
             </body>
