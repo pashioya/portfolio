@@ -1,7 +1,6 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
 import * as THREE from "three";
-import "./LightPillar.css";
 
 interface LightPillarProps {
     topColor?: string;
@@ -50,7 +49,7 @@ const LightPillar: React.FC<LightPillarProps> = ({
             canvas.getContext("webgl") ||
             canvas.getContext("experimental-webgl");
         if (!gl) {
-            Promise.resolve().then(() => setWebGLSupported(false));
+            setTimeout(() => setWebGLSupported(false), 0);
             console.warn("WebGL is not supported in this browser");
         }
     }, []);
@@ -80,7 +79,7 @@ const LightPillar: React.FC<LightPillarProps> = ({
             });
         } catch (error) {
             console.error("Failed to create WebGL renderer:", error);
-            Promise.resolve().then(() => setWebGLSupported(false));
+            setTimeout(() => setWebGLSupported(false), 0);
             return;
         }
 
@@ -276,7 +275,7 @@ const LightPillar: React.FC<LightPillarProps> = ({
 
         // Animation loop with fixed timestep
         let lastTime = performance.now();
-        const targetFPS = interactive ? 60 : 30;
+        const targetFPS = 60;
         const frameTime = 1000 / targetFPS;
 
         const animate = (currentTime: number) => {
@@ -291,8 +290,7 @@ const LightPillar: React.FC<LightPillarProps> = ({
             const deltaTime = currentTime - lastTime;
 
             if (deltaTime >= frameTime) {
-                const clampedDeltaMs = Math.min(deltaTime, 50);
-                timeRef.current += (clampedDeltaMs / 1000) * rotationSpeed;
+                timeRef.current += 0.016 * rotationSpeed;
                 materialRef.current.uniforms.uTime.value = timeRef.current;
                 rendererRef.current.render(sceneRef.current, cameraRef.current);
                 lastTime = currentTime - (deltaTime % frameTime);
@@ -330,14 +328,6 @@ const LightPillar: React.FC<LightPillarProps> = ({
 
         // Cleanup
         return () => {
-            if (mouseMoveTimeout) {
-                clearTimeout(mouseMoveTimeout);
-                mouseMoveTimeout = null;
-            }
-            if (resizeTimeout) {
-                clearTimeout(resizeTimeout);
-                resizeTimeout = null;
-            }
             window.removeEventListener("resize", handleResize);
             if (interactive) {
                 container.removeEventListener("mousemove", handleMouseMove);
@@ -383,7 +373,7 @@ const LightPillar: React.FC<LightPillarProps> = ({
     if (!webGLSupported) {
         return (
             <div
-                className={`light-pillar-fallback ${className}`}
+                className={`w-full h-full absolute top-0 left-0 flex items-center justify-center bg-black/10 text-gray-500 text-sm ${className}`}
                 style={{ mixBlendMode }}
             >
                 WebGL not supported
@@ -394,12 +384,8 @@ const LightPillar: React.FC<LightPillarProps> = ({
     return (
         <div
             ref={containerRef}
-            className={`light-pillar-container ${className}`}
-            style={{
-                mixBlendMode,
-                pointerEvents: interactive ? "auto" : "none",
-            }}
-            aria-hidden="true"
+            className={`w-full h-full absolute top-0 left-0 ${className}`}
+            style={{ mixBlendMode }}
         />
     );
 };
