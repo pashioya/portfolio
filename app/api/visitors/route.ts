@@ -1,12 +1,13 @@
 import { NextResponse } from "next/server";
 import { sql } from "drizzle-orm";
 
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { visits } from "@/db/schema";
 
 const LIVE_WINDOW_MS = 5 * 60 * 1000;
 
 async function getStats() {
+    const db = getDb();
     const [totalRow] = await db
         .select({ count: sql<number>`count(*)` })
         .from(visits);
@@ -36,6 +37,7 @@ function getIp(request: Request) {
 
 export async function GET() {
     try {
+        const db = getDb();
         const stats = await getStats();
         return NextResponse.json(stats, { status: 200 });
     } catch (error) {
@@ -49,6 +51,7 @@ export async function GET() {
 
 export async function POST(request: Request) {
     try {
+        const db = getDb();
         const ip = getIp(request);
 
         await db.insert(visits).values({ ip });

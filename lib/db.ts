@@ -1,16 +1,20 @@
 import { drizzle } from "drizzle-orm/node-postgres";
 import { Pool } from "pg";
 
-const connectionString = process.env.DATABASE_URL;
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 const ssl = { rejectUnauthorized: false };
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+let dbInstance: ReturnType<typeof drizzle> | null = null;
 
-if (!connectionString) {
-    throw new Error("DATABASE_URL is not set");
+export function getDb() {
+    if (dbInstance) return dbInstance;
+    const connectionString = process.env.DATABASE_URL;
+    if (!connectionString) {
+        throw new Error("DATABASE_URL is not set");
+    }
+    const pool = new Pool({ connectionString, ssl });
+    dbInstance = drizzle(pool);
+    return dbInstance;
 }
 
-const pool = new Pool({ connectionString, ssl });
-
-export const db = drizzle(pool);
-export type DbClient = typeof db;
+export type DbClient = ReturnType<typeof getDb>;
