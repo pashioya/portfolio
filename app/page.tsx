@@ -1,42 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
 import LightPillar from "@/components/LightPillar";
 import ShinyText from "@/components/ShinyText";
 import { Button } from "@/components/ui/button";
-import { VisitorDialog, type VisitorStats } from "@/components/VisitorDialog";
+import { VisitorDialog } from "@/components/VisitorDialog";
+import { useVisitorStats } from "@/lib/useVisitorStats";
 import { SiGithub, SiInstagram, SiLinkedin } from "react-icons/si";
 
 export default function Home() {
-    const [stats, setStats] = useState<VisitorStats>({
-        total: 0,
-        unique: 0,
-        live: 0,
-    });
-
-    useEffect(() => {
-        const recordVisit = async () => {
-            try {
-                const res = await fetch("/api/visitors", { method: "POST" });
-                if (!res.ok) throw new Error("POST failed");
-                const data = (await res.json()) as VisitorStats;
-                setStats(data);
-            } catch (err) {
-                console.error("Visitor POST failed, falling back to GET", err);
-                try {
-                    const res = await fetch("/api/visitors");
-                    if (!res.ok) throw new Error("GET failed");
-                    const data = (await res.json()) as VisitorStats;
-                    setStats(data);
-                } catch (err2) {
-                    console.error("Visitor GET failed", err2);
-                }
-            }
-        };
-
-        recordVisit();
-    }, []);
+    const { stats } = useVisitorStats({ retry: 1 });
 
     return (
         <div className="relative min-h-screen overflow-x-hidden bg-[#05030f] text-slate-100">
