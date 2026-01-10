@@ -50,7 +50,6 @@ const LightPillar: React.FC<LightPillarProps> = ({
             canvas.getContext("experimental-webgl");
         if (!gl) {
             setTimeout(() => setWebGLSupported(false), 0);
-            console.warn("WebGL is not supported in this browser");
         }
     }, []);
 
@@ -78,7 +77,7 @@ const LightPillar: React.FC<LightPillarProps> = ({
                 depth: false,
             });
         } catch (error) {
-            console.error("Failed to create WebGL renderer:", error);
+            console.log("Light Pillar Error: ", { error });
             setTimeout(() => setWebGLSupported(false), 0);
             return;
         }
