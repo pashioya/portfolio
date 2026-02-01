@@ -1,9 +1,15 @@
+"use client";
+
 import LightPillar from "@/components/LightPillar";
 import ShinyText from "@/components/ShinyText";
 import { Button } from "@/components/ui/button";
+import { VisitorDialog } from "@/components/VisitorDialog";
+import { useVisitorStats } from "@/lib/useVisitorStats";
 import { SiGithub, SiInstagram, SiLinkedin } from "react-icons/si";
 
 export default function Home() {
+    const { stats } = useVisitorStats({ retry: 1 });
+
     return (
         <div className="relative min-h-screen overflow-x-hidden bg-[#05030f] text-slate-100">
             <div className="absolute inset-0">
@@ -21,7 +27,7 @@ export default function Home() {
                     className="h-full w-full"
                 />
             </div>
-
+            <VisitorDialog stats={stats} />
             <main className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center gap-12 px-6 py-16 text-center md:px-12">
                 <div className="space-y-7">
                     <p className="text-sm uppercase tracking-[0.3em] text-slate-200/60 md:text-base">
