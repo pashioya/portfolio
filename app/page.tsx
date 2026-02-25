@@ -1,130 +1,145 @@
-import LightPillar from "@/components/LightPillar";
-import ShinyText from "@/components/ShinyText";
+"use client";
+
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { SiGithub, SiInstagram, SiLinkedin } from "react-icons/si";
+import { FolderOpen, SquareUserRound } from "lucide-react";
+import { SiBluesky, SiCalendly, SiGithub, SiLinkedin } from "react-icons/si";
 
 export default function Home() {
     return (
-        <div className="relative min-h-screen overflow-x-hidden bg-[#05030f] text-slate-100">
-            <div className="absolute inset-0">
-                <LightPillar
-                    topColor="#ff6b6b"
-                    bottomColor="#ff1f4b"
-                    intensity={0.9}
-                    rotationSpeed={0.4}
-                    interactive={false}
-                    glowAmount={0.0025}
-                    pillarWidth={2.6}
-                    pillarHeight={0.48}
-                    noiseIntensity={0.1}
-                    pillarRotation={18}
-                    className="h-full w-full"
-                />
-            </div>
-
-            <main className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center gap-12 px-6 py-16 text-center md:px-12">
-                <div className="space-y-7">
-                    <p className="text-sm uppercase tracking-[0.3em] text-slate-200/60 md:text-base">
-                        Backend Developer
-                    </p>
-                    <ShinyText
-                        text="Paul Ashioya"
-                        speed={2}
-                        delay={0}
-                        color="#b5b5b5"
-                        shineColor="#ffffff"
-                        spread={120}
-                        direction="left"
-                        yoyo={false}
-                        pauseOnHover={true}
-                        className="text-4xl leading-tight md:text-7xl"
-                    />
-                    <div className="flex items-center justify-center gap-5">
+        <div className="min-h-screen bg-zinc-950 text-zinc-100">
+            <main className="flex min-h-screen flex-col border border-zinc-800/90 px-6 py-8 md:px-12 md:py-10">
+                <section className="mx-auto grid w-full max-w-6xl flex-1 grid-cols-1 items-center gap-12 py-8 md:grid-cols-[1.2fr_0.8fr]">
+                    <div className="space-y-5">
+                        <Badge className="bg-amber-200 px-2.5 py-1 text-zinc-900 hover:bg-amber-200">
+                            Hello 👋
+                        </Badge>
+                        <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">
+                            I&apos;m Paul Ashioya
+                        </h1>
+                        <p className="max-w-xl text-sm leading-7 text-zinc-300 md:text-base">
+                            I work across the stack to build purposeful and
+                            functional experiences. I&apos;m from Nairobi, Kenya
+                            and currently work as a Backend Engineer at
+                            Optimile.
+                        </p>
                         <Button
                             asChild
-                            variant="ghost"
-                            size="icon-lg"
-                            className="group rounded-full text-white"
+                            className="mt-2 bg-amber-200 text-zinc-900 hover:bg-white"
                         >
-                            <a
-                                href="https://www.linkedin.com/in/paul-ashioya/"
-                                aria-label="LinkedIn"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <SiLinkedin
-                                    className="size-6 opacity-80 transition-opacity duration-75 group-hover:opacity-100"
-                                    aria-hidden="true"
-                                />
-                            </a>
-                        </Button>
-                        <Button
-                            asChild
-                            variant="ghost"
-                            size="icon-lg"
-                            className="group rounded-full text-white"
-                        >
-                            <a
-                                href="https://github.com/pashioya"
-                                aria-label="GitHub"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <SiGithub
-                                    className="size-6 opacity-80 transition-opacity duration-75 group-hover:opacity-100"
-                                    aria-hidden="true"
-                                />
-                            </a>
-                        </Button>
-                        <Button
-                            asChild
-                            variant="ghost"
-                            size="icon-lg"
-                            className="group rounded-full text-white"
-                        >
-                            <a
-                                href="https://www.instagram.com/paul.ashioya/"
-                                aria-label="Instagram"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <SiInstagram
-                                    className="size-6 opacity-80 transition-opacity duration-75 group-hover:opacity-100"
-                                    aria-hidden="true"
-                                />
+                            <a href="mailto:john.ashioya@gmail.com">
+                                Contact me
                             </a>
                         </Button>
                     </div>
-                </div>
 
-                <div className="flex flex-wrap items-center justify-center gap-4 text-sm font-medium">
+                    <div className="grid grid-cols-2 gap-4 md:justify-self-end">
+                        <Button
+                            asChild
+                            variant="outline"
+                            className="h-32 w-full min-w-32 flex-col gap-3 border-zinc-600 bg-transparent text-zinc-100 hover:border-white hover:bg-white hover:text-zinc-900"
+                        >
+                            <a
+                                href="https://github.com/pashioya"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FolderOpen className="size-6" />
+                                <span>My projects</span>
+                            </a>
+                        </Button>
+                        <Button
+                            asChild
+                            variant="outline"
+                            className="h-32 w-full min-w-32 flex-col gap-3 border-zinc-600 bg-transparent text-zinc-100 hover:border-white hover:bg-white hover:text-zinc-900"
+                        >
+                            <a
+                                href="https://www.linkedin.com/in/paul-ashioya/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <SquareUserRound className="size-6" />
+                                <span>About me</span>
+                            </a>
+                        </Button>
+                        <Button
+                            asChild
+                            variant="outline"
+                            className="h-32 w-full min-w-32 flex-col gap-3 border-zinc-600 bg-transparent text-zinc-100 hover:border-white hover:bg-white hover:text-zinc-900"
+                        >
+                            <a
+                                href="https://ap.paul-ashioya.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FolderOpen className="size-6" />
+                                <span>Publications</span>
+                            </a>
+                        </Button>
+                        <Button
+                            asChild
+                            variant="outline"
+                            className="h-32 w-full min-w-32 flex-col gap-3 border-zinc-600 bg-transparent text-zinc-100 hover:border-white hover:bg-white hover:text-zinc-900"
+                        >
+                            <a
+                                href="https://calendly.com/john-ashioya/30min"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <SiCalendly className="size-6" />
+                                <span>Calendly</span>
+                            </a>
+                        </Button>
+                    </div>
+                </section>
+
+                <footer className="flex justify-center gap-2 pb-2">
                     <Button
                         asChild
-                        variant="ghost"
-                        className="min-w-40 bg-white/15 text-white hover:bg-white/95 hover:text-slate-900"
+                        variant="secondary"
+                        size="icon"
+                        className="size-8 rounded-full bg-zinc-800 text-zinc-200 hover:bg-white hover:text-zinc-900"
                     >
                         <a
-                            href="https://ap.paul-ashioya.com/"
+                            href="https://github.com/pashioya"
                             target="_blank"
                             rel="noopener noreferrer"
+                            aria-label="GitHub"
                         >
-                            Academic Pages
+                            <SiGithub className="size-4" aria-hidden="true" />
                         </a>
                     </Button>
                     <Button
                         asChild
-                        variant="outline"
-                        className="min-w-40 text-black"
+                        variant="secondary"
+                        size="icon"
+                        className="size-8 rounded-full bg-zinc-800 text-zinc-200 hover:bg-white hover:text-zinc-900"
                     >
                         <a
-                            href="mailto:john.ashioya@gmail.com"
+                            href="https://bsky.app/profile/paul-ashioya.com"
                             target="_blank"
                             rel="noopener noreferrer"
+                            aria-label="Bluesky"
                         >
-                            Contact
+                            <SiBluesky className="size-4" aria-hidden="true" />
                         </a>
                     </Button>
-                </div>
+                    <Button
+                        asChild
+                        variant="secondary"
+                        size="icon"
+                        className="size-8 rounded-full bg-zinc-800 text-zinc-200 hover:bg-white hover:text-zinc-900"
+                    >
+                        <a
+                            href="https://www.linkedin.com/in/paul-ashioya/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                        >
+                            <SiLinkedin className="size-4" aria-hidden="true" />
+                        </a>
+                    </Button>
+                </footer>
             </main>
         </div>
     );
