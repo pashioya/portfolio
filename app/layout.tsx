@@ -1,6 +1,14 @@
 import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+
+const zeroXProto = localFont({
+    src: "./fonts/0xProto-Regular.woff2",
+    variable: "--font-0xproto",
+    weight: "400",
+    display: "swap",
+});
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -36,7 +44,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#05030f] min-h-screen overflow-hidden overscroll-none`}
+                className={`${zeroXProto.variable} ${geistSans.variable} ${geistMono.variable} min-h-screen overflow-x-hidden overscroll-none bg-[#f7f2eb] text-[#1f1a15] antialiased`}
             >
                 {children}
             </body>
