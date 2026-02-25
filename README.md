@@ -1,3 +1,8 @@
+## NEXTJS for a simple static site is overkill.
+
+- this is just an excuse to keep using and maintaining knowledge of the framework
+- Would recommend astro or basic react (+ vite) instead
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

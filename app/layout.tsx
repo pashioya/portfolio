@@ -21,8 +21,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "Portfolio of Paul Ashioya",
-    description: "Portfolio of Paul Ashioya, Backend Developer",
+    title: "Paul Ashioya",
+    description: "Portfolio of Paul Ashioya",
     manifest: "/manifest.webmanifest",
     appleWebApp: {
         capable: true,
