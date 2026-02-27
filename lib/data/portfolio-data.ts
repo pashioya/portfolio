@@ -87,7 +87,7 @@ export const quickLinks: QuickLink[] = [
         external: true,
     },
     {
-        href: "https://memos.paul-ashioya.com/inbox",
+        href: "https://memos.paul-ashioya.com",
         icon: FileText,
         label: "Memo Notes",
         external: true,
