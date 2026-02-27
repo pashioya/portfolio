@@ -44,7 +44,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${zeroXProto.variable} ${geistSans.variable} ${geistMono.variable} min-h-screen overflow-x-hidden overscroll-none bg-[#f7f2eb] text-[#1f1a15] antialiased`}
+                className={`${zeroXProto.variable} ${geistSans.variable} ${geistMono.variable} min-h-screen overflow-x-hidden overscroll-none`}
             >
                 {children}
             </body>
