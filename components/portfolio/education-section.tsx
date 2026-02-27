@@ -18,32 +18,29 @@ export function EducationSection() {
                         <div
                             key={index}
                             className={
-                                index > 0 ? "border-t border-zinc-700 pt-4" : ""
+                                index > 0 ? "border-t border-border pt-4" : ""
                             }
                         >
                             {edu.isWip ? (
                                 <div className="flex items-start justify-between gap-3">
                                     <div>
                                         <div className="flex gap-3">
-                                            <h3 className="font-semibold text-zinc-100">
+                                            <h3 className="font-semibold text-foreground">
                                                 {edu.degree}
                                             </h3>
-                                            <StatusIndicator
-                                                variant="wip"
-                                                className="mt-1.5 shrink-0"
-                                            />
+                                            <StatusIndicator variant="wip" />
                                         </div>
-                                        <p className="text-sm text-zinc-400">
+                                        <p className="text-sm text-muted-foreground">
                                             {edu.institution}
                                         </p>
                                     </div>
                                 </div>
                             ) : (
                                 <div>
-                                    <h3 className="font-semibold text-zinc-100">
+                                    <h3 className="font-semibold text-foreground">
                                         {edu.degree}
                                     </h3>
-                                    <p className="text-sm text-zinc-400">
+                                    <p className="text-sm text-muted-foreground">
                                         {edu.institution}
                                         {edu.period && ` • ${edu.period}`}
                                     </p>

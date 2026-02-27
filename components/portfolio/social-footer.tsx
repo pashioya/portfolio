@@ -12,7 +12,7 @@ export function SocialFooter() {
                         asChild
                         variant="secondary"
                         size="icon"
-                        className="size-8 rounded-full bg-zinc-800 text-zinc-200 hover:bg-white hover:text-zinc-900"
+                        className="size-8 rounded-full bg-secondary text-muted-foreground hover:bg-accent hover:text-accent-foreground"
                     >
                         <a
                             href={link.href}

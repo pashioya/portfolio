@@ -5,7 +5,7 @@ import { Download } from "lucide-react";
 export function HeroSection() {
     return (
         <div className="space-y-5">
-            <Badge className="bg-amber-200 px-2.5 py-1 text-zinc-900 hover:bg-amber-200">
+            <Badge className="bg-primary px-2.5 py-1 text-primary-foreground hover:bg-primary">
                 Hello 👋🏾
             </Badge>
             <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">
@@ -13,7 +13,7 @@ export function HeroSection() {
             </h1>
             <Button
                 asChild
-                className="mt-2 bg-amber-200 text-zinc-900 hover:bg-white"
+                className="mt-2 bg-primary text-primary-foreground hover:bg-accent"
             >
                 <a href="/api/download-cv">
                     <Download className="mr-2 size-4" />

@@ -16,33 +16,28 @@ export function WorkExperience() {
                 <div className="space-y-5 px-5">
                     {workExperiences.map((work, index) => (
                         <div
-                            key={index}
+                            key={`${work.title}-${work.company}-${work.period}`}
                             className={
-                                index > 0 ? "border-t border-zinc-700 pt-4" : ""
+                                index > 0 ? "border-t border-border pt-4" : ""
                             }
                         >
                             <div className="flex items-start justify-between gap-3">
                                 <div>
                                     <div className="flex gap-3">
-                                        <h3 className="font-semibold text-zinc-100">
+                                        <h3 className="font-semibold text-foreground">
                                             {work.title}
                                         </h3>
                                         {work.isCurrent && (
-                                            <StatusIndicator
-                                                variant="current"
-                                                className="mt-1.5 shrink-0"
-                                            />
+                                            <StatusIndicator variant="current" />
                                         )}
                                     </div>
-                                    <p className="text-sm text-zinc-400">
+                                    <p className="text-sm text-muted-foreground">
                                         {work.company} • {work.period}
                                     </p>
-                                    <ul className="mt-2 space-y-1 text-sm text-zinc-300">
-                                        {work.responsibilities.map(
-                                            (resp, idx) => (
-                                                <li key={idx}>• {resp}</li>
-                                            )
-                                        )}
+                                    <ul className="mt-2 space-y-1 text-sm text-foreground">
+                                        {work.responsibilities.map((resp) => (
+                                            <li key={resp}>• {resp}</li>
+                                        ))}
                                     </ul>
                                 </div>
                             </div>
