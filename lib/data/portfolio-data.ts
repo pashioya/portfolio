@@ -8,6 +8,7 @@ export interface WorkExperience {
     company: string;
     period: string;
     responsibilities: string[];
+    tags?: string[];
     isCurrent?: boolean;
 }
 
@@ -16,6 +17,7 @@ export interface Education {
     institution: string;
     period?: string;
     isWip?: boolean;
+    highlights?: string[];
 }
 
 export interface QuickLink {
@@ -37,9 +39,13 @@ export const workExperiences: WorkExperience[] = [
         company: "Optimile",
         period: "Nov 2024 - Present",
         responsibilities: [
-            "Maintain REST APIs and AMQP queues for EV charging protocols (OCPI, OCHP, OICP)",
-            "Debug infrastructure issues ensuring platform reliability globally",
+            "Integrate external services into the company's back-office system (APIs, data flows, Django backend components).",
+            "Contribute to new features and improvements for the EV charging point management system.",
+            "Set up and maintain roaming connections with other charge point operators so customers can charge on partner networks.",
+            "Implement and maintain interoperability with charging stations from different hardware manufacturers.",
+            "Provide technical support on the backend side for charging station issues (diagnosing, fixing or escalating backend-related problems).",
         ],
+        tags: ["Python", "Django", "Java", "AWS"],
         isCurrent: true,
     },
     {
@@ -47,17 +53,21 @@ export const workExperiences: WorkExperience[] = [
         company: "Ag Solution",
         period: "Jun 2024 - Oct 2024",
         responsibilities: [
-            "Developed enterprise industrial software solutions",
-            "Implemented security infrastructure and multi-platform deployments",
+            "Developed enterprise industrial software solutions.",
+            "Implemented security infrastructure and multi-platform deployments.",
         ],
+        tags: ["Full-Stack", "Security", "DevOps"],
     },
     {
         title: "Software Engineer Intern",
         company: "Tryve EU",
-        period: "2024",
+        period: "Apr 2024 - Jun 2024",
         responsibilities: [
-            "Built location-based task management mobile app using React Native",
+            "Built TaskTrove, a mobile app integrating monday.com with real-time GPS task assignment.",
+            "Implemented monday OAuth authentication with GDPR-compliant data handling.",
+            "Added geofencing, offline support, and map-based task visualization.",
         ],
+        tags: ["React Native", "monday.com API", "OAuth", "GDPR"],
     },
 ];
 
@@ -66,6 +76,10 @@ export const education: Education[] = [
         degree: "Applied Computer Science, B.S.",
         institution: "Karel de Grote - Antwerp",
         period: "2021 - 2024",
+        highlights: [
+            "Specialized in AI/ML: machine learning, NLP, deep learning & MLOps with Python.",
+            "Built full-stack AI-integrated applications with a focus on software architecture and DevOps.",
+        ],
     },
     {
         degree: "International Baccalaureate (I.B.)",
