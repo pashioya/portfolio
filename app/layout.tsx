@@ -24,6 +24,11 @@ export const metadata: Metadata = {
     title: "Paul Ashioya",
     description: "Portfolio of Paul Ashioya",
     manifest: "/manifest.webmanifest",
+    icons: {
+        icon: [{ url: "/icons/favicon.svg", type: "image/svg+xml" }],
+        shortcut: [{ url: "/icons/favicon.svg", type: "image/svg+xml" }],
+        apple: [{ url: "/icons/apple-touch-icon.png", type: "image/png" }],
+    },
     appleWebApp: {
         capable: true,
         statusBarStyle: "black-translucent",
