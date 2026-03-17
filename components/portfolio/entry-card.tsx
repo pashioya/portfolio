@@ -42,8 +42,8 @@ export function EntryCard({
                     {tags.map((tag) => (
                         <Badge
                             key={tag}
-                            variant="secondary"
-                            className="rounded-md border border-border/70 bg-muted/55 text-xs font-medium text-muted-foreground"
+                            variant="muted"
+                            className="rounded-md text-xs font-medium"
                         >
                             {tag}
                         </Badge>

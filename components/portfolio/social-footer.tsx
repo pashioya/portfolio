@@ -5,15 +5,15 @@ export function SocialFooter() {
     return (
         <footer className="pt-5 md:pt-7">
             <div className="flex justify-center gap-2.5 pb-1">
-                {socialLinks.map((link, index) => {
+                {socialLinks.map((link) => {
                     const Icon = link.icon;
                     return (
                         <Button
-                            key={index}
+                            key={link.href}
                             asChild
                             variant="secondary"
                             size="icon"
-                            className="size-9 rounded-xl border border-border/70 bg-muted/65 text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/70 hover:bg-primary/20 hover:text-foreground active:translate-y-[1px]"
+                            className="size-9 rounded-xl border border-border/70 bg-muted/65 text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/70 hover:bg-primary/20 hover:text-foreground active:translate-y-px"
                         >
                             <a
                                 href={link.href}

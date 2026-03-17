@@ -4,11 +4,11 @@ import { quickLinks } from "@/lib/data/portfolio-data";
 export function QuickLinks() {
     return (
         <aside className="grid grid-cols-2 gap-4 md:sticky md:top-[10vh] md:self-start md:justify-self-end">
-            {quickLinks.map((link, index) => {
+            {quickLinks.map((link) => {
                 const Icon = link.icon;
                 return (
                     <Button
-                        key={index}
+                        key={link.href}
                         asChild
                         variant="outline"
                         className="border-border/50 bg-secondary/40 text-foreground transition-all duration-200 hover:border-accent hover:-translate-y-1 hover:bg-secondary/70 hover:text-accent"

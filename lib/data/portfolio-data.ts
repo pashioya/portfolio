@@ -39,7 +39,7 @@ export const workExperiences: WorkExperience[] = [
         company: "Optimile",
         period: "Nov 2024 - Present",
         responsibilities: [
-            "Built and maintain API integrations and Django services for the internal back-office platform.",
+            "Build and maintain API integrations and Django services for the internal back-office platform.",
             "Ship backend features for EV charge-point management, from data modeling to production rollout.",
             "Own roaming integrations with external operators so customers can charge seamlessly across partner networks.",
             "Maintain hardware interoperability across multiple charging-station vendors and protocol variants.",

@@ -16,7 +16,7 @@ export function EducationSection() {
                 <div className="space-y-6 px-5">
                     {education.map((edu, index) => (
                         <div
-                            key={index}
+                            key={`${edu.degree}-${edu.institution}-${edu.period ?? "no-period"}`}
                             className={
                                 index > 0
                                     ? "border-t border-border/90 pt-6"
