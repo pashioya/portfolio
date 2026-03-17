@@ -5,20 +5,21 @@ import {
 } from "@/components/ui/accordion";
 import { workExperiences } from "@/lib/data/portfolio-data";
 import { EntryCard } from "./entry-card";
-
 export function WorkExperience() {
     return (
         <AccordionItem value="work">
-            <AccordionTrigger className="text-base hover:no-underline">
+            <AccordionTrigger className="font-semibold hover:no-underline md:text-base">
                 Work Experience
             </AccordionTrigger>
             <AccordionContent>
-                <div className="space-y-5 px-5">
+                <div className="space-y-6 px-5">
                     {workExperiences.map((work, index) => (
                         <div
                             key={`${work.title}-${work.company}-${work.period}`}
                             className={
-                                index > 0 ? "border-t border-border pt-4" : ""
+                                index > 0
+                                    ? "border-t border-border/90 pt-6"
+                                    : ""
                             }
                         >
                             <EntryCard

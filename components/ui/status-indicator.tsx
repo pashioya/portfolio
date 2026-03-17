@@ -6,7 +6,7 @@ type StatusIndicatorProps = {
 };
 
 export function StatusIndicator({ variant, className }: StatusIndicatorProps) {
-    const label = variant === "current" ? "Current" : "In Progress";
+    const label = variant === "current" ? "Current" : "Ongoing";
     const colorClass =
         variant === "current"
             ? "text-emerald-600 dark:text-emerald-400"
