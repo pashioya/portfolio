@@ -9,16 +9,18 @@ import { EntryCard } from "./entry-card";
 export function EducationSection() {
     return (
         <AccordionItem value="education">
-            <AccordionTrigger className="text-base hover:no-underline">
+            <AccordionTrigger className="text-base font-semibold hover:no-underline md:text-base">
                 Education & Certificates
             </AccordionTrigger>
             <AccordionContent>
-                <div className="space-y-5 px-5">
+                <div className="space-y-6 px-5">
                     {education.map((edu, index) => (
                         <div
                             key={index}
                             className={
-                                index > 0 ? "border-t border-border pt-4" : ""
+                                index > 0
+                                    ? "border-t border-border/90 pt-6"
+                                    : ""
                             }
                         >
                             <EntryCard

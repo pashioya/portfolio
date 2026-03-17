@@ -8,12 +8,17 @@ export function HeroSection() {
             <Badge className="bg-primary px-2.5 py-1 text-primary-foreground hover:bg-primary">
                 Hello 👋🏾
             </Badge>
-            <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">
+            <h1 className="text-balance text-4xl font-semibold md:text-6xl">
                 I&apos;m Paul Ashioya
             </h1>
+            <p className="max-w-[56ch] text-pretty text-[0.95rem] leading-relaxed text-muted-foreground md:text-base">
+                Backend software engineer shipping reliable API platforms,
+                AI-enabled workflows, and cloud systems designed for measurable
+                uptime, maintainability, and fast delivery.
+            </p>
             <Button
                 asChild
-                className="mt-2 bg-primary text-primary-foreground hover:bg-accent"
+                className="mt-1 h-10 rounded-lg bg-primary px-5 text-primary-foreground shadow-[0_10px_26px_rgb(242_199_114_/_0.2)] transition-transform duration-200 hover:-translate-y-0.5 hover:bg-accent active:translate-y-[1px]"
             >
                 <a href="/api/download-cv">
                     <Download className="mr-2 size-4" />
