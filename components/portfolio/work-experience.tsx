@@ -3,8 +3,8 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
-import { StatusIndicator } from "@/components/ui/status-indicator";
 import { workExperiences } from "@/lib/data/portfolio-data";
+import { EntryCard } from "./entry-card";
 
 export function WorkExperience() {
     return (
@@ -21,26 +21,13 @@ export function WorkExperience() {
                                 index > 0 ? "border-t border-border pt-4" : ""
                             }
                         >
-                            <div className="flex items-start justify-between gap-3">
-                                <div>
-                                    <div className="flex gap-3">
-                                        <h3 className="font-semibold text-foreground">
-                                            {work.title}
-                                        </h3>
-                                        {work.isCurrent && (
-                                            <StatusIndicator variant="current" />
-                                        )}
-                                    </div>
-                                    <p className="text-sm text-muted-foreground">
-                                        {work.company} • {work.period}
-                                    </p>
-                                    <ul className="mt-2 space-y-1 text-sm text-foreground">
-                                        {work.responsibilities.map((resp) => (
-                                            <li key={resp}>• {resp}</li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
+                            <EntryCard
+                                title={work.title}
+                                subtitle={`${work.company} • ${work.period}`}
+                                status={work.isCurrent ? "current" : undefined}
+                                bullets={work.responsibilities}
+                                tags={work.tags}
+                            />
                         </div>
                     ))}
                 </div>
