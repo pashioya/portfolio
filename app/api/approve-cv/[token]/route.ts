@@ -1,17 +1,18 @@
+export const runtime = "nodejs";
+
 import { NextRequest } from "next/server";
 import { Resend } from "resend";
 import {
     consumePendingRequest,
     restorePendingRequest,
 } from "@/lib/cv-requests";
-import { env } from "@/lib/env";
-
-const resend = new Resend(env.RESEND_API_KEY);
+import { getEnv } from "@/lib/env";
 
 export async function GET(
     _request: NextRequest,
     { params }: { params: Promise<{ token: string }> }
 ) {
+    const env = getEnv();
     const { token } = await params;
     const pending = consumePendingRequest(token);
 
@@ -20,8 +21,18 @@ export async function GET(
             status: 404,
         });
     }
+    // Guard against PAT leakage to non-GitHub hosts.
+    const cvUrl = new URL(env.CV_GITHUB_URL);
+    if (cvUrl.hostname !== "api.github.com") {
+        console.error(
+            "CV_GITHUB_URL points to non-GitHub host:",
+            cvUrl.hostname
+        );
+        restorePendingRequest(token, pending);
+        return new Response("Server configuration error.", { status: 500 });
+    }
 
-    const githubResponse = await fetch(env.CV_GITHUB_URL, {
+    const githubResponse = await fetch(cvUrl.toString(), {
         headers: {
             Authorization: `Bearer ${env.CV_GITHUB_PAT}`,
             Accept: "application/vnd.github.raw+json",
@@ -47,8 +58,10 @@ export async function GET(
     const today = new Date().toISOString().split("T")[0];
     const filename = `Paul-Ashioya-CV-${today}.pdf`;
 
+    const resend = new Resend(env.RESEND_API_KEY);
+    let sendError: unknown;
     try {
-        await resend.emails.send({
+        const { error } = await resend.emails.send({
             from: env.RESEND_FROM_EMAIL,
             to: pending.email,
             subject: "Paul Ashioya's CV",
@@ -61,8 +74,13 @@ export async function GET(
             `,
             attachments: [{ filename, content: pdfBase64 }],
         });
+        sendError = error ?? null;
     } catch (err) {
-        console.error("Resend failed, restoring token:", err);
+        sendError = err;
+    }
+
+    if (sendError) {
+        console.error("Resend failed, restoring token:", sendError);
         restorePendingRequest(token, pending);
         return new Response(
             "Failed to send email. Please try approving again.",

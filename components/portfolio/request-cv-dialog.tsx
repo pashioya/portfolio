@@ -44,14 +44,11 @@ export function RequestCvDialog() {
     }
 
     function handleOpenChange(next: boolean) {
-        setOpen(next);
-        if (!next) {
-            // Reset when closing
-            setTimeout(() => {
-                setEmail("");
-                setState("idle");
-            }, 200);
+        if (next) {
+            setEmail("");
+            setState("idle");
         }
+        setOpen(next);
     }
 
     return (
@@ -80,7 +77,14 @@ export function RequestCvDialog() {
                 ) : (
                     <form onSubmit={handleSubmit}>
                         <div className="py-4">
+                            <label
+                                htmlFor="cv-request-email"
+                                className="sr-only"
+                            >
+                                Email address
+                            </label>
                             <Input
+                                id="cv-request-email"
                                 type="email"
                                 placeholder="you@example.com"
                                 value={email}

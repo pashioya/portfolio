@@ -1,3 +1,5 @@
+import "server-only";
+
 const required = [
     "RESEND_API_KEY",
     "RESEND_FROM_EMAIL",
@@ -8,7 +10,9 @@ const required = [
 
 type RequiredKey = (typeof required)[number];
 
-function loadEnv(): Record<RequiredKey, string> & { DB_DIR?: string } {
+export type Env = Record<RequiredKey, string> & { DB_DIR?: string };
+
+export function getEnv(): Env {
     const missing = required.filter((k) => !process.env[k]);
     if (missing.length > 0) {
         throw new Error(
@@ -22,5 +26,3 @@ function loadEnv(): Record<RequiredKey, string> & { DB_DIR?: string } {
         DB_DIR: process.env.DB_DIR,
     };
 }
-
-export const env = loadEnv();
