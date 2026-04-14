@@ -1,7 +1,8 @@
 import { FileText, SquareUserRound } from "lucide-react";
 import { IconType } from "react-icons";
 import { MdEmail } from "react-icons/md";
-import { SiBluesky, SiCalendly, SiGithub, SiLinkedin } from "react-icons/si";
+import { SiBluesky, SiCalendly, SiGithub } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
 
 export interface WorkExperience {
     title: string;
@@ -132,7 +133,7 @@ export const socialLinks: SocialLink[] = [
     },
     {
         href: "https://www.linkedin.com/in/paul-ashioya/",
-        icon: SiLinkedin,
+        icon: FaLinkedin,
         label: "LinkedIn",
     },
 ];
