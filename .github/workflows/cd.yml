@@ -21,7 +21,7 @@ jobs:
                   mkdir -p "$HOME/.local/bin"
                   curl -fsSL "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64" -o "$HOME/.local/bin/cloudflared"
                   chmod +x "$HOME/.local/bin/cloudflared"
-                  echo "$HOME/.local/bin" >> "$CV_GITHUB_PATH"
+                  echo "$HOME/.local/bin" >>  "$GITHUB_PATH"
                   cloudflared --version
 
             - name: Deploy (Cloudflare Access SSH + git pull)
@@ -53,7 +53,7 @@ jobs:
                         cd '$DEPLOY_PATH'; \
                         git fetch --prune; \
                         git checkout main; \
-                        git pull --rebase --ff-only; \
-                        pnpm install --frozen-lockfile; \
+                        git reset --hard origin/main; \
+                        CI=true pnpm install --frozen-lockfile; \
                         pnpm run build; \
                         sudo -n /usr/bin/systemctl restart portfolio"
