@@ -18,12 +18,12 @@ export interface SocialLink {
 }
 
 export const quickLinks: QuickLink[] = [
-    {
-        href: "https://blog.paul-ashioya.com",
-        icon: SquareUserRound,
-        label: "Blog",
-        external: true,
-    },
+    // {
+    //     href: "https://blog.paul-ashioya.com",
+    //     icon: SquareUserRound,
+    //     label: "Blog",
+    //     external: true,
+    // },
     {
         href: "https://memos.paul-ashioya.com",
         icon: FileText,
